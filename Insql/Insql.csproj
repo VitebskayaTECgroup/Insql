@@ -1,0 +1,350 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3B830DFB-3357-45BD-B345-D092432CD0C0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Insql</RootNamespace>
+    <AssemblyName>Insql</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.6\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net40\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net40\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net40\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net40\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net40\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\export\export.xls" />
+    <Content Include="Content\fonts\MaterialIcons-Regular.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\fonts\MaterialIconsOutlined-Regular.otf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\fonts\MaterialIconsRound-Regular.otf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\fonts\MaterialIconsSharp-Regular.otf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\fonts\MaterialIconsTwoTone-Regular.otf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\ASU.pubxml" />
+    <None Include="Properties\PublishProfiles\INSQL1.pubxml" />
+    <None Include="Properties\PublishProfiles\INSQL2.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\index.css" />
+    <Content Include="Content\css\query.css" />
+    <Content Include="Content\css\query_builder.css" />
+    <Content Include="Content\export\empty.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\images\assessment-white-18dp.svg" />
+    <Content Include="Content\images\assign.png" />
+    <Content Include="Content\images\chart.png" />
+    <Content Include="Content\images\desktop.png" />
+    <Content Include="Content\images\desktop_black.png" />
+    <Content Include="Content\images\down.png" />
+    <Content Include="Content\images\edit.png" />
+    <Content Include="Content\images\equalizer.png" />
+    <Content Include="Content\images\favicon.ico" />
+    <Content Include="Content\images\favicon.png" />
+    <Content Include="Content\images\info.png" />
+    <Content Include="Content\images\menu_closed.png" />
+    <Content Include="Content\images\menu_opened.png" />
+    <Content Include="Content\images\next.png" />
+    <Content Include="Content\images\play.png" />
+    <Content Include="Content\images\playlist.png" />
+    <Content Include="Content\images\playlist_black.png" />
+    <Content Include="Content\images\previous.png" />
+    <Content Include="Content\images\save.png" />
+    <Content Include="Content\images\up.png" />
+    <Content Include="Content\js\index.js" />
+    <Content Include="Content\js\query.js" />
+    <Content Include="Content\js\tree-items.js" />
+    <Content Include="Content\lib\chartist\chartist.css" />
+    <Content Include="Content\lib\chartist\chartist.js" />
+    <Content Include="Content\sql\counters\ecom\active.sql" />
+    <Content Include="Content\sql\counters\ecom\balance.sql" />
+    <Content Include="Content\sql\counters\ecom\diagnostic.sql" />
+    <Content Include="Content\sql\counters\ecom\reactive.sql" />
+    <Content Include="Content\sql\counters\gas\all.sql" />
+    <Content Include="Content\sql\counters\gas\hour.sql" />
+    <Content Include="Content\sql\counters\gas\old-all.sql" />
+    <Content Include="Content\sql\counters\gas\old-hour.sql" />
+    <Content Include="Content\sql\counters\gas\old-up.sql" />
+    <Content Include="Content\sql\counters\gas\up.sql" />
+    <Content Include="Content\sql\counters\gidrozatvor.sql" />
+    <Content Include="Content\sql\counters\heat\dok.sql" />
+    <Content Include="Content\sql\counters\heat\heat-balance.sql" />
+    <Content Include="Content\sql\counters\heat\kim.sql" />
+    <Content Include="Content\sql\counters\heat\kovry.sql" />
+    <Content Include="Content\sql\counters\heat\rubikon.sql" />
+    <Content Include="Content\sql\counters\heat\vksht.sql" />
+    <Content Include="Content\sql\counters\heat\vzrd.sql" />
+    <Content Include="Content\sql\counters\hvo\balance.sql" />
+    <Content Include="Content\sql\counters\hvo\city.sql" />
+    <Content Include="Content\sql\counters\hvo\hvo.sql" />
+    <Content Include="Content\sql\counters\hvo\in-out.sql" />
+    <Content Include="Content\sql\counters\hvo\levels.sql" />
+    <Content Include="Content\sql\counters\hvo\metran.sql" />
+    <Content Include="Content\sql\counters\hvo\outcome.sql" />
+    <Content Include="Content\sql\counters\hvo\river.sql" />
+    <Content Include="Content\sql\counters\hvo\self-hc.sql" />
+    <Content Include="Content\sql\counters\hvo\self-ko.sql" />
+    <Content Include="Content\sql\counters\ko\balance-old.sql" />
+    <Content Include="Content\sql\counters\ko\balance.sql" />
+    <Content Include="Content\sql\counters\ko\bmh.sql" />
+    <Content Include="Content\sql\counters\ko\pvk.sql" />
+    <Content Include="Content\sql\counters\ko\query-1.sql" />
+    <Content Include="Content\sql\counters\ko\query-2.sql" />
+    <Content Include="Content\sql\counters\sets.sql" />
+    <Content Include="Content\sql\counters\ts\center.sql" />
+    <Content Include="Content\sql\counters\ts\coefficients.sql" />
+    <Content Include="Content\sql\counters\ts\dok.sql" />
+    <Content Include="Content\sql\counters\ts\luchesa.sql" />
+    <Content Include="Content\sql\counters\ts\reverse-tg-2.sql" />
+    <Content Include="Content\sql\counters\ts\reverse-tg-3.sql" />
+    <Content Include="Content\sql\counters\ts\support-2.sql" />
+    <Content Include="Content\sql\counters\ts\support.sql" />
+    <Content Include="Content\sql\counters\ts\test-center.sql" />
+    <Content Include="Content\sql\counters\ts\test-dok.sql" />
+    <Content Include="Content\sql\counters\ts\test-luchesa.sql" />
+    <Content Include="Content\sql\counters\ts\test-ts-balance.sql" />
+    <Content Include="Content\sql\counters\ts\test-vzrd.sql" />
+    <Content Include="Content\sql\counters\ts\test-west.sql" />
+    <Content Include="Content\sql\counters\ts\ts-balance.sql" />
+    <Content Include="Content\sql\counters\ts\vzrd.sql" />
+    <Content Include="Content\sql\counters\ts\west.sql" />
+    <Content Include="Content\sql\devices\boiler-city-water.sql" />
+    <Content Include="Content\sql\devices\boilers\ka1\boiler.sql" />
+    <Content Include="Content\sql\devices\boilers\ka2\boiler.sql" />
+    <Content Include="Content\sql\devices\boilers\ka3\boiler.sql" />
+    <Content Include="Content\sql\devices\boilers\ka3\checks.sql" />
+    <Content Include="Content\sql\devices\boilers\ka4\checks.sql" />
+    <Content Include="Content\sql\devices\boilers\ka4\boiler.sql" />
+    <Content Include="Content\sql\devices\boilers\ka5\boiler.sql" />
+    <Content Include="Content\sql\devices\boilers\additional.sql" />
+    <Content Include="Content\sql\devices\deaerator\deaerator-2-to-1.sql" />
+    <Content Include="Content\sql\devices\flow-meters.sql" />
+    <Content Include="Content\sql\devices\boilers\ka3\acc\acc1.sql" />
+    <Content Include="Content\sql\devices\boilers\ka3\acc\acc2.sql" />
+    <Content Include="Content\sql\devices\boilers\ka3\acc\metal.sql" />
+    <Content Include="Content\sql\devices\boilers\ka3\analyze.sql" />
+    <Content Include="Content\sql\devices\boilers\ka3\list.sql" />
+    <Content Include="Content\sql\devices\boilers\ka3\snakes.sql" />
+    <Content Include="Content\sql\devices\boilers\ka3\temp_acc\metal_1.sql" />
+    <Content Include="Content\sql\devices\boilers\ka3\temp_acc\metal_2.sql" />
+    <Content Include="Content\sql\devices\boilers\ka3\temp_acc\metal_3.sql" />
+    <Content Include="Content\sql\devices\boilers\ka3\temp_acc\metal_4.sql" />
+    <Content Include="Content\sql\devices\boilers\ka3\wind_power.sql" />
+    <Content Include="Content\sql\devices\boilers\ka5\acc\acc1.sql" />
+    <Content Include="Content\sql\devices\boilers\ka5\acc\acc2.sql" />
+    <Content Include="Content\sql\devices\boilers\ka5\acc\metal.sql" />
+    <Content Include="Content\sql\devices\boilers\ka5\list-print.sql" />
+    <Content Include="Content\sql\devices\boilers\ka5\list.sql" />
+    <Content Include="Content\sql\devices\boilers\ka5\temp_acc\metal_1.sql" />
+    <Content Include="Content\sql\devices\boilers\ka5\temp_acc\metal_2.sql" />
+    <Content Include="Content\sql\devices\boilers\ka5\temp_acc\metal_3.sql" />
+    <Content Include="Content\sql\devices\boilers\ka5\temp_acc\metal_4.sql" />
+    <Content Include="Content\sql\devices\masut\height.sql" />
+    <Content Include="Content\sql\devices\masut\input.sql" />
+    <Content Include="Content\sql\devices\masut\mass.sql" />
+    <Content Include="Content\sql\devices\masut\vol-1.sql" />
+    <Content Include="Content\sql\devices\masut\vol-2.sql" />
+    <Content Include="Content\sql\devices\masut\vol-3.sql" />
+    <Content Include="Content\sql\devices\masut\vol-4.sql" />
+    <Content Include="Content\sql\devices\rep-sn-4.sql" />
+    <Content Include="Content\sql\devices\sn1-2.sql" />
+    <Content Include="Content\sql\devices\stk-er\ta-2.sql" />
+    <Content Include="Content\sql\devices\stk-er\ta-3.sql" />
+    <Content Include="Content\sql\devices\temp-outside.sql" />
+    <Content Include="Content\sql\devices\turbines\ta-2\setting.sql" />
+    <Content Include="Content\sql\devices\turbines\ta-3\setting.sql" />
+    <Content Include="Content\sql\devices\turbo\view.sql" />
+    <Content Include="Content\sql\diagnostic\service\counters.sql" />
+    <Content Include="Content\sql\diagnostic\service\devices.insql1.sql" />
+    <Content Include="Content\sql\diagnostic\service\devices.insql2.sql" />
+    <Content Include="Content\sql\diagnostic\service\doors.sql" />
+    <Content Include="Content\sql\diagnostic\service\esgar.sql" />
+    <Content Include="Content\sql\diagnostic\service\insql1.sql" />
+    <Content Include="Content\sql\diagnostic\service\insql2.sql" />
+    <Content Include="Content\sql\diagnostic\service\instant-heat.sql" />
+    <Content Include="Content\sql\diagnostic\service\instant-ko.sql" />
+    <Content Include="Content\sql\diagnostic\service\instant-steam.sql" />
+    <Content Include="Content\sql\diagnostic\service\spt.sql" />
+    <Content Include="Content\sql\diagnostic\service\stk-er.sql" />
+    <Content Include="Content\sql\diagnostic\service\ta-2.sql" />
+    <Content Include="Content\sql\diagnostic\service\ta-3-analog.sql" />
+    <Content Include="Content\sql\diagnostic\service\ta-3-discrete.sql" />
+    <Content Include="Content\sql\diagnostic\service\temperatures.sql" />
+    <Content Include="Content\sql\diagnostic\service\time-diff.sql" />
+    <Content Include="Content\sql\diagnostic\ups\ups-01.sql" />
+    <Content Include="Content\sql\diagnostic\ups\ups-02.sql" />
+    <Content Include="Content\sql\diagnostic\ups\ups-03.sql" />
+    <Content Include="Content\sql\diagnostic\ups\ups-04.sql" />
+    <Content Include="Content\sql\diagnostic\ups\ups-05.sql" />
+    <Content Include="Content\sql\diagnostic\ups\ups-06.sql" />
+    <Content Include="Content\sql\diagnostic\ups\ups-07.sql" />
+    <Content Include="Content\sql\diagnostic\ups\ups-08.sql" />
+    <Content Include="Content\sql\diagnostic\ups\ups-09.sql" />
+    <Content Include="Content\sql\diagnostic\ups\ups-10.sql" />
+    <Content Include="Content\sql\diagnostic\ups\ups-11.sql" />
+    <Content Include="Content\sql\diagnostic\ups\ups-12.sql" />
+    <Content Include="Content\sql\diagnostic\ups\ups-13.sql" />
+    <Content Include="Content\sql\diagnostic\ups\ups-14.sql" />
+    <Content Include="Content\sql\diagnostic\ups\ups-15.sql" />
+    <Content Include="Content\sql\diagnostic\ups\ups-16.sql" />
+    <Content Include="Content\sql\diagnostic\ups\ups-17.sql" />
+    <Content Include="Content\sql\diagnostic\ups\ups-18.sql" />
+    <Content Include="Content\sql\diagnostic\ups\ups-19.sql" />
+    <Content Include="Content\sql\diagnostic\ups\ups-20.sql" />
+    <Content Include="Content\sql\diagnostic\ups\ups-21.sql" />
+    <Content Include="Content\sql\diagnostic\ups\ups-22.sql" />
+    <Content Include="Content\sql\diagnostic\ups\ups-23.sql" />
+    <Content Include="Content\sql\diagnostic\ups\ups-24.sql" />
+    <Content Include="Content\sql\views\economy\ecom-old.sql" />
+    <Content Include="Content\sql\views\economy\ecom.sql" />
+    <Content Include="Content\sql\views\economy\input.sql" />
+    <Content Include="Content\sql\views\loses\all.sql" />
+    <Content Include="Content\sql\views\loses\hc.sql" />
+    <Content Include="Content\sql\views\loses\ktc.sql" />
+    <Content Include="Content\sql\views\loses\list.sql" />
+    <Content Include="Content\text\timeline.html" />
+    <Content Include="Content\widgets\datepicker\datepicker.css" />
+    <Content Include="Content\widgets\datepicker\datepicker.dark.css" />
+    <Content Include="Content\widgets\datepicker\datepicker.js" />
+    <Content Include="Content\widgets\timepicker\timepicker.css" />
+    <Content Include="Content\widgets\timepicker\timepicker.dark.css" />
+    <Content Include="Content\widgets\timepicker\timepicker.js" />
+    <Content Include="Pages\Alarms\Export.aspx" />
+    <Content Include="Pages\Alarms\Default.aspx" />
+    <Content Include="Pages\Data\Export.aspx" />
+    <Content Include="Pages\Data\Table.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Pages\Query\Graph.aspx" />
+    <Content Include="Pages\Query\Export.aspx" />
+    <Content Include="Pages\Query\Table.aspx" />
+    <Content Include="Pages\Query\Tags.aspx" />
+    <Content Include="Pages\Query\SelectedTags.aspx" />
+    <Content Include="Pages\Query\Default.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Alarm.cs" />
+    <Compile Include="Models\AlarmBase.cs" />
+    <Compile Include="Models\Exporter.cs" />
+    <Compile Include="Models\Tag.cs" />
+    <Compile Include="Models\Report.cs" />
+    <Compile Include="Models\ReportCell.cs" />
+    <Compile Include="Models\ReportHeader.cs" />
+    <Compile Include="Models\ReportRow.cs" />
+    <Compile Include="Models\ReportSummary.cs" />
+    <Compile Include="Models\TagInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64025</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:64025/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
