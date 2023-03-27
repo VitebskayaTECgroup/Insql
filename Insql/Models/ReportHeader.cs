@@ -1,4 +1,6 @@
-﻿namespace Insql.Models
+﻿using System;
+
+namespace Insql.Models
 {
 	public class ReportHeader
 	{
@@ -24,7 +26,7 @@
 					.Trim();
 			}
 
-			int spaceAfterHalf = text.IndexOf(" ", text.Length / 2 - 1);
+			int spaceAfterHalf = text.IndexOf(" ", Math.Max(text.Length / 2 - 1, 1));
 			if (spaceAfterHalf > -1)
 			{
 				text = text.Substring(0, spaceAfterHalf) + "<br>" + text.Substring(spaceAfterHalf + 1);
