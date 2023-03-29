@@ -57,8 +57,7 @@
 		},
 		'КОТЛОАГРЕГАТЫ': {
 			'К/а № 1': {
-				'Расход топлива': '#/devices/boilers/ka1/boiler.sql',
-				'TEST': '#/test.sql'
+				'Расход топлива': '#/devices/boilers/ka1/boiler.sql'
 			},
 			'К/а № 2': {
 				'Расход топлива': '#/devices/boilers/ka2/boiler.sql'
