@@ -7,7 +7,7 @@
 /*DownQuery="Summary log"*/
 
 SET QUOTED_IDENTIFIER OFF
-select
+SELECT
 	CONVERT(nvarchar(10),DateTime,104) as 'Дата',
 	Type,
 	SUM(TotalCount) as 'Count'
@@ -31,7 +31,7 @@ order by
 /*UpQuery="Month total counter"*/
 
 SET QUOTED_IDENTIFIER OFF
-select
+SELECT
 	Min(DateTime) as 'Start Time',
 	Max(DateTime) as 'End Time',
 	Type,
