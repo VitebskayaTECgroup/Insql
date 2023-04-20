@@ -7,11 +7,11 @@ SET QUOTED_IDENTIFIER OFF
 SELECT
 	DateTime as "Дата",
 	null,
-	CAST(isnull(U09_UN11F001,0)*isnull(U09_SY00A700,0) as decimal(15,2)) as "G пар, кг/ч [U09_UN11F001]",
-	CAST(isnull(U09_UN11P001,0)*isnull(U09_SY00A700,0) as decimal(15,2)) as "P пар, изб.КПа [U09_UN11P001]",
-	CAST(isnull(U09_UN11T001,0)*isnull(U09_SY00A700,0) as decimal(15,2)) as "T пар, °С [U09_UN11T001]",
-	CAST(isnull(U09_UN21F001,0)*isnull(U09_SY00A700,0) as decimal(15,2)) as "G кон, кг/ч [U09_UN21F001]",
-	CAST(isnull(U09_UN21T001,0)*isnull(U09_SY00A700,0) as decimal(15,2)) as "T кон, °С [U09_UN21T001]"
+	CAST(isnull(U09_UN11F001,0) as decimal(15,2)) as "G пар, кг/ч [U09_UN11F001]",
+	CAST(isnull(U09_UN11P001,0) as decimal(15,2)) as "P пар, изб.КПа [U09_UN11P001]",
+	CAST(isnull(U09_UN11T001,0) as decimal(15,2)) as "T пар, °С [U09_UN11T001]",
+	CAST(isnull(U09_UN21F001,0) as decimal(15,2)) as "G кон, кг/ч [U09_UN21F001]",
+	CAST(isnull(U09_UN21T001,0) as decimal(15,2)) as "T кон, °С [U09_UN21T001]"
 FROM
 	OpenQuery(INSQL,
 	"SELECT DateTime, U09_SY00A700, U09_UN11P001,  U09_UN11T001, U09_UN21T001, U09_UN11F001, U09_UN21F001 FROM Runtime.dbo.AnalogWideHistory
