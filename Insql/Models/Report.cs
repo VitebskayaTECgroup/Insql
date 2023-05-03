@@ -359,7 +359,7 @@ namespace Insql.Models
 
 											else if (key == "EDIT")
 											{
-												//Edit[i] = value.Replace("M1", "").Replace("|", "").Replace(":", "").Trim();
+												Headers[i].Edit = value.Replace("M1", "").Replace("|", "").Replace(":", "").Trim();
 												IsEditEnabled = true;
 											}
 
@@ -481,6 +481,7 @@ namespace Insql.Models
 											IsFloat = isFloat,
 											Value = isFloat ? val : 0,
 											Check = check,
+											Edit = Headers[i].Edit,
 											IsEmpty = Headers[i].Name == "DateMarker",
 										};
 

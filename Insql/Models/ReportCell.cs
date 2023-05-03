@@ -15,5 +15,7 @@
 		public bool Bool { get; set; }
 
 		public string Check { get; set; }
+
+		public string Edit { get; set; }
 	}
 }

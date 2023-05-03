@@ -16,6 +16,8 @@ namespace Insql.Models
 
 		public bool IsEmpty { get; set; }
 
+		public string Edit { get; set; }
+
 		public string SeparatedName(string separator)
 		{
 			string text = Name;

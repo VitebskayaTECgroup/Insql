@@ -290,6 +290,7 @@
     <Content Include="Content\widgets\timepicker\timepicker.js" />
     <Content Include="Pages\Alarms\Export.aspx" />
     <Content Include="Pages\Alarms\Default.aspx" />
+    <Content Include="Pages\Data\Edit.aspx" />
     <Content Include="Pages\Data\Export.aspx" />
     <Content Include="Pages\Data\Table.aspx" />
     <Content Include="Default.aspx" />

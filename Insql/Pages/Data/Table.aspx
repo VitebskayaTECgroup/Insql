@@ -150,17 +150,19 @@
 
 					foreach (var cell in row.Cells)
 					{
+						string cellEdit = Model.IsEditEnabled ? "edit=\"" + cell.Edit + "\"" : "";
+
 						if (cell == null || cell.IsEmpty)
 						{
 							Response.Write("<td nowrap class=\"null\"></td>");
 						}
 						else if (cell.IsFloat)
 						{
-							Response.Write("<td nowrap class=\"" + cell.Check + "\">" + cell.Value + "</td>");
+							Response.Write("<td nowrap " + cellEdit + " class=\"" + cell.Check + "\">" + cell.Value + "</td>");
 						}
 						else
 						{
-							Response.Write("<td nowrap class=\"" + cell.Check + "\">" + cell.Text + "</td>");
+							Response.Write("<td nowrap " + cellEdit + " class=\"" + cell.Check + "\">" + cell.Text + "</td>");
 						}
 					}
 
@@ -172,7 +174,7 @@
 		</tbody>
 		<tfoot>
 			<tr>
-				<th colspan="<%=Model.Headers.Length%>" onclick="toggleSummary()">Агрегирование</th>
+				<th colspan="<%=(Model.Headers.Length + (Model.IsEditEnabled ? 1 : 0))%>" onclick="toggleSummary()">Агрегирование</th>
 			</tr>
 			<tr style="display: none">
 				<th>Сумма</th>
