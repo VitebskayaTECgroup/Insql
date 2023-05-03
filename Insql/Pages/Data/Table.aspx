@@ -143,7 +143,7 @@
 						
 					if (Model.IsEditEnabled)
 					{
-						Response.Write("<th><button onclick=\"edit(this, '" + row.Date + "')\">изм.</button></th>");
+						Response.Write("<th><button onclick=\"edit(this, '" + row.Date + "', '" + _server + "')\">изм.</button></th>");
 					}
 
 					Response.Write("<th class=\"date\">" + row.Date.ToString(Model.DateFormat) + "</th>");

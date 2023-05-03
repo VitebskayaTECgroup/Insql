@@ -412,7 +412,7 @@ function exportQuery(button) {
 	xhr.send(null)
 }
 
-function edit(button, date) {
+function edit(button, date, server) {
 
 	pause = true
 
@@ -475,7 +475,8 @@ function edit(button, date) {
 			}
 			xhr.send(
 				'start=' + encodeURIComponent(inputs[0].value) +
-				'&finish=' + encodeURIComponent(inputs[1].value) + 
+				'&finish=' + encodeURIComponent(inputs[1].value) +
+				'&server=' + encodeURIComponent(server) +
 				'&tags=' + encodeURIComponent(tags.join('---'))
 			)
 		}

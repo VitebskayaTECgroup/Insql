@@ -359,7 +359,7 @@ namespace Insql.Models
 
 											else if (key == "EDIT")
 											{
-												Headers[i].Edit = value.Replace("M1", "").Replace("|", "").Replace(":", "").Trim();
+												Headers[i].Edit = value.ToUpper().Replace("M1", "").Replace("|", "").Replace(":", "").Trim();
 												IsEditEnabled = true;
 											}
 
