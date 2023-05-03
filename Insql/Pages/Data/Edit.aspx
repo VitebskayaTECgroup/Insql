@@ -11,6 +11,7 @@
 	using (var conn = new System.Data.Odbc.OdbcConnection("Driver={SQL Server}; Server=localhost; Database=RUNTIME; Uid=wwAdmin; Pwd=wwAdmin;"))
 	{
 		conn.ConnectionTimeout = 240;
+		conn.Open();
 
 		foreach (var tag in tags)
 		{
@@ -20,9 +21,11 @@
 			{
 				command.CommandTimeout = 60;
 				command.CommandText = "EXEC [dbo].[vst_InsertManualRealConstant4] '" + start + "}', '" + finish + "', '" + elements[0] + "', '" + elements[1].Replace(',', '.') + "', 1";
-				//command.ExecuteNonQuery();
-				Response.Write("<pre>" + command.CommandText + "</pre>");
+				command.ExecuteNonQuery();
+				//Response.Write("<pre>" + command.CommandText + "</pre>");
 			}
 		}
+
+		conn.Close();
 	}
 %>
