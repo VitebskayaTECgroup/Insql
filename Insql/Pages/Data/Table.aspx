@@ -140,7 +140,7 @@
 						: "load({ query: '" + Model.DownQuery + "', date: '" + row.Date + "', down: true })";
 
 					Response.Write("<tr class=\"" + (isEven ? "even" : "odd") + "\" ondblclick=\"" + downFunction + "\">");
-						
+
 					if (Model.IsEditEnabled)
 					{
 						Response.Write("<th><button onclick=\"edit(this, '" + row.Date + "', '" + _server + "')\">изм.</button></th>");
@@ -150,19 +150,22 @@
 
 					foreach (var cell in row.Cells)
 					{
-						string cellEdit = Model.IsEditEnabled ? "edit=\"" + cell.Edit + "\"" : "";
-
 						if (cell == null || cell.IsEmpty)
 						{
 							Response.Write("<td nowrap class=\"null\"></td>");
 						}
-						else if (cell.IsFloat)
-						{
-							Response.Write("<td nowrap " + cellEdit + " class=\"" + cell.Check + "\">" + cell.Value + "</td>");
-						}
 						else
 						{
-							Response.Write("<td nowrap " + cellEdit + " class=\"" + cell.Check + "\">" + cell.Text + "</td>");
+							string cellEdit = (Model.IsEditEnabled && !string.IsNullOrEmpty(cell.Edit)) ? "edit=\"" + cell.Edit + "\"" : "";
+
+							if (cell.IsFloat)
+							{
+								Response.Write("<td nowrap " + cellEdit + " class=\"" + cell.Check + "\">" + cell.Value + "</td>");
+							}
+							else
+							{
+								Response.Write("<td nowrap " + cellEdit + " class=\"" + cell.Check + "\">" + cell.Text + "</td>");
+							}
 						}
 					}
 
