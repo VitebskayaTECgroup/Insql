@@ -230,6 +230,7 @@
     <Content Include="Content\sql\devices\stk-er\ta-2.sql" />
     <Content Include="Content\sql\devices\stk-er\ta-3.sql" />
     <Content Include="Content\sql\devices\temp-outside.sql" />
+    <Content Include="Content\sql\devices\turbines\ta-3\calc.sql" />
     <Content Include="Content\sql\devices\turbines\ta-2\setting.sql" />
     <Content Include="Content\sql\devices\turbines\ta-3\setting.sql" />
     <Content Include="Content\sql\devices\turbo\view.sql" />

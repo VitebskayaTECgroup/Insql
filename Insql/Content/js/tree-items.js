@@ -52,7 +52,8 @@
 				'Задания регуляторов': '#/devices/turbines/ta-2/setting.sql'
 			},
 			'TA-3': {
-				'Задания регуляторов': '#/devices/turbines/ta-3/setting.sql'
+				'Задания регуляторов': '#/devices/turbines/ta-3/setting.sql',
+				'Агрегированные': '#/devices/turbines/ta-3/calc.sql'
 			}
 		},
 		'КОТЛОАГРЕГАТЫ': {
