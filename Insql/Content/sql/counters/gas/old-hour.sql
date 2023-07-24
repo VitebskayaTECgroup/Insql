@@ -1,7 +1,7 @@
 {часовые срезы}
 /*ReportName="ГАЗ по ГРП" (срезы на конец часа)*/
 /*Mode=часовые-1*/
-/*DownQuery="часовые срезы 9/24"*/
+/*DownQuery="часовые срезы 9_24"*/
 /*UpQuery="суточные срезы"*/
 
 SET QUOTED_IDENTIFIER OFF
@@ -28,7 +28,7 @@ FROM
 /*ReportName="ГАЗ по ГРП" (срезы на конец суток)*/
 /*Mode=суточные-1*/
 /*DownQuery="часовые срезы"*/
-/*UpQuery="посменный 9/24"*/
+/*UpQuery="посменный 9_24"*/
 
 SET QUOTED_IDENTIFIER OFF
 SELECT
@@ -52,7 +52,7 @@ FROM
 	AND DateTime <= @finish")
 
 
-{часовые срезы 9/24}
+{часовые срезы 9_24}
 /*ReportName="ГАЗ по ГРП" (почасовые за смену 9/24)*/
 /*ReportRefresh=dd.MM.yyyy HH:05:00.000*/
 /*StartDate=dd.MM.yyyy 10:05:00.000*/
@@ -60,7 +60,7 @@ FROM
 /*Step=01.00.0000 00:00:00.000*/
 /*Resolution=3600000*/
 /*DownQuery="часовые срезы"*/
-/*UpQuery="посменный 9/24"*/
+/*UpQuery="посменный 9_24"*/
 
 SET QUOTED_IDENTIFIER OFF
 SELECT
@@ -82,14 +82,14 @@ FROM
 	AND DateTime <= @finish")
 
 
-{посменный 9/24}
+{посменный 9_24}
 /*ReportName="ГАЗ по ГРП"(агрегированные часовые данные по сменам за прош. смену с 9 до 9 )*/
 /*ReportRefresh=dd.MM.yyyy HH:05:00.000*/
 /*StartDate=02.MM.yyyy 09:05:00.000*/
 /*DeltaDate=-01.01.0000 00:00:00.000*/
 /*Step=00.01.0000 00:00:00.000*/
 /*Resolution=86400000*/
-/*DownQuery="часовые срезы 9/24"*/
+/*DownQuery="часовые срезы 9_24"*/
 /*UpQuery="суточные срезы"*/
 
 SET QUOTED_IDENTIFIER OFF

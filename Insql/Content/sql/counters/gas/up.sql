@@ -30,7 +30,7 @@ FROM (
 /*ReportName="ГАЗ по ГРП" (срезы на конец суток)*/
 /*Mode=суточные-1*/
 /*DownQuery="С НАЧАЛА СУТОК"*/
-/*UpQuery="посменный 9/24"*/
+/*UpQuery="посменный 9_24"*/
 
 SET QUOTED_IDENTIFIER OFF
 SELECT
@@ -62,7 +62,7 @@ FROM (
 /*Step=01.00.0000 00:00:00.000*/
 /*Resolution=3600000*/
 /*DownQuery="С НАЧАЛА СУТОК"*/
-/*UpQuery="посменный 9/24"*/
+/*UpQuery="посменный 9_24"*/
 
 SET QUOTED_IDENTIFIER OFF
 Select 
@@ -86,7 +86,7 @@ FROM (
 ) AS T1
 
 
-{посменный 9/24}
+{посменный 9_24}
 /*ReportName="ГАЗ по ГРП"(агрегированные часовые данные по сменам с 9 до 9)*/
 /*ReportRefresh=dd.MM.yyyy HH:05:00.000*/
 /*StartDate=02.MM.yyyy 09:05:00.000*/
