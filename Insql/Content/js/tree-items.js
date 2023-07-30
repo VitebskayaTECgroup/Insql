@@ -36,6 +36,9 @@
 			'ГРУ2-3': '#/http://insql.vst.vitebsk.energo.net/mnemonica/el_GRU2/',
 			'ГРУ-1': '#/http://insql.vst.vitebsk.energo.net/mnemonica/el_GRU1/'
 					},
+		'Оперативные схемы КТЦ': {
+			'Главные паропроводы': '#/http://insql.vst.vitebsk.energo.net/mnemonica/oper_ktc/'
+					},
 		'ИБП': '#/http://insql.vst.vitebsk.energo.net/mnemonica/ups/',
 		'Прогноз погоды': '#/http://insql.vst.vitebsk.energo.net/pages/weather/'
 	},
