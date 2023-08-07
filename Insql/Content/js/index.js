@@ -95,7 +95,7 @@ function Lines(name, data) {
 
 function Link(url, text) {
 	var a = document.createElement('a')
-	a.href = url
+	a.href = url.replace('server', location.hostname)
 	a.innerHTML = '<i class="' + (url.indexOf('http') > -1 ? 'mnemo' : 'link') + '">&emsp;</i>' + text
 	return a
 }
