@@ -1,47 +1,47 @@
 ﻿var treeItems = {
 	'МНЕМОСХЕМЫ': {
-		'Sonar': '#/http://insql.vst.vitebsk.energo.net/mnemonica/sonar/',
+		'Sonar': '#/http://server/mnemonica/sonar/',
 		'ТЭЦ': '#/http://www.vst.vitebsk.energo.net/mnemo/',
-		'Мазутные емкости': '#/http://insql.vst.vitebsk.energo.net/mnemonica/mazut/',
-		'РЭП СН-4': '#/http://insql.vst.vitebsk.energo.net/mnemonica/rep_sn4/',
+		'Мазутные емкости': '#/http://server/mnemonica/mazut/',
+		'РЭП СН-4': '#/http://server/mnemonica/rep_sn4/',
 		'ХВО': {
-			'ХВО-1': '#/http://insql.vst.vitebsk.energo.net/mnemonica/hvo_1/',
-			'ХВО-2': '#/http://insql.vst.vitebsk.energo.net/mnemonica/hvo_2/',
-			'Емкости кислоты и щелочи': '#/http://insql.vst.vitebsk.energo.net/mnemonica/hvo/',
-			'Конденсатоочистка': '#/http://insql.vst.vitebsk.energo.net/mnemonica/condensatoochistka/',
-			'Кислотно-щелочное помещение': '#/http://insql.vst.vitebsk.energo.net/mnemonica/acid_base_room/'
+			'ХВО-1': '#/http://server/mnemonica/hvo_1/',
+			'ХВО-2': '#/http://server/mnemonica/hvo_2/',
+			'Емкости кислоты и щелочи': '#/http://server/mnemonica/hvo/',
+			'Конденсатоочистка': '#/http://server/mnemonica/condensatoochistka/',
+			'Кислотно-щелочное помещение': '#/http://server/mnemonica/acid_base_room/'
 		},
 		'KA-3': {
-			'VG1. Экран 1': '#/http://insql.vst.vitebsk.energo.net/mnemonica/ka3_vg1_1/',
-			'VG1. Экран 2': '#/http://insql.vst.vitebsk.energo.net/mnemonica/ka3_vg1_2/',
-			'VG1. Экран 3': '#/http://insql.vst.vitebsk.energo.net/mnemonica/ka3_vg1_3/',
-			'VG2. Экран 1': '#/http://insql.vst.vitebsk.energo.net/mnemonica/ka3_vg2_1/',
-			'VG2. Экран 2': '#/http://insql.vst.vitebsk.energo.net/mnemonica/ka3_vg2_2/',
-			'VG2. Экран 3': '#/http://insql.vst.vitebsk.energo.net/mnemonica/ka3_vg2_3/',
-			'Мнемосхема 1': '#/http://insql.vst.vitebsk.energo.net/mnemonica/ka3_vg1_4/',
-			'Мнемосхема 2': '#/http://insql.vst.vitebsk.energo.net/mnemonica/ka3_vg2_4/',
-			'Схема управления': '#/http://insql.vst.vitebsk.energo.net/mnemonica/ka3_control/'
+			'VG1. Экран 1': '#/http://server/mnemonica/ka3_vg1_1/',
+			'VG1. Экран 2': '#/http://server/mnemonica/ka3_vg1_2/',
+			'VG1. Экран 3': '#/http://server/mnemonica/ka3_vg1_3/',
+			'VG2. Экран 1': '#/http://server/mnemonica/ka3_vg2_1/',
+			'VG2. Экран 2': '#/http://server/mnemonica/ka3_vg2_2/',
+			'VG2. Экран 3': '#/http://server/mnemonica/ka3_vg2_3/',
+			'Мнемосхема 1': '#/http://server/mnemonica/ka3_vg1_4/',
+			'Мнемосхема 2': '#/http://server/mnemonica/ka3_vg2_4/',
+			'Схема управления': '#/http://server/mnemonica/ka3_control/'
 		},
 		'KA-5': {
-			'VG1. Экран 1': '#/http://insql.vst.vitebsk.energo.net/mnemonica/ka5_vg1_1/',
-			'VG1. Экран 2': '#/http://insql.vst.vitebsk.energo.net/mnemonica/ka5_vg1_2/',
-			'VG1. Экран 3': '#/http://insql.vst.vitebsk.energo.net/mnemonica/ka5_vg1_3/',
-			'VG1. Экран 4': '#/http://insql.vst.vitebsk.energo.net/mnemonica/ka5_vg1_4/',
-			'Мнемосхема 1': '#/http://insql.vst.vitebsk.energo.net/mnemonica/ka5_vg1_5/',
-			'Мнемосхема 2': '#/http://insql.vst.vitebsk.energo.net/mnemonica/ka5_vg1_6/',
-			'Мнемосхема 3': '#/http://insql.vst.vitebsk.energo.net/mnemonica/ka5_vg1_7/',
+			'VG1. Экран 1': '#/http://server/mnemonica/ka5_vg1_1/',
+			'VG1. Экран 2': '#/http://server/mnemonica/ka5_vg1_2/',
+			'VG1. Экран 3': '#/http://server/mnemonica/ka5_vg1_3/',
+			'VG1. Экран 4': '#/http://server/mnemonica/ka5_vg1_4/',
+			'Мнемосхема 1': '#/http://server/mnemonica/ka5_vg1_5/',
+			'Мнемосхема 2': '#/http://server/mnemonica/ka5_vg1_6/',
+			'Мнемосхема 3': '#/http://server/mnemonica/ka5_vg1_7/',
 		},
 		'Электрические схемы': {
-			'ОРУ': '#/http://insql.vst.vitebsk.energo.net/mnemonica/el_ORU/',
-			'ГРУ2-3': '#/http://insql.vst.vitebsk.energo.net/mnemonica/el_GRU2/',
-			'ГРУ-1': '#/http://insql.vst.vitebsk.energo.net/mnemonica/el_GRU1/'
-					},
+			'ОРУ': '#/http://server/mnemonica/el_ORU/',
+			'ГРУ2-3': '#/http://server/mnemonica/el_GRU2/',
+			'ГРУ-1': '#/http://server/mnemonica/el_GRU1/'
+		},
 		'Оперативные схемы КТЦ': {
-			'Главные паропроводы': '#/http://insql.vst.vitebsk.energo.net/mnemonica/oper_ktc/',
-			'Питательные трубопроводы': '#/http://insql.vst.vitebsk.energo.net/mnemonica/oper_ktc_1/'
-					},
-		'ИБП': '#/http://insql.vst.vitebsk.energo.net/mnemonica/ups/',
-		'Прогноз погоды': '#/http://insql.vst.vitebsk.energo.net/pages/weather/'
+			'Главные паропроводы': '#/http://server/mnemonica/oper_ktc/',
+			'Питательные трубопроводы': '#/http://server/mnemonica/oper_ktc_1/'
+		},
+		'ИБП': '#/http://server/mnemonica/ups/',
+		'Прогноз погоды': '#/http://server/pages/weather/'
 	},
 	'WebQuery: данные и графики': host + 'pages/query/',
 	'ОТЧЕТЫ ПО ОБОРУДОВАНИЮ': {
@@ -248,7 +248,8 @@
 			'ИБП-21. КН 3-1': '#/diagnostic/ups/ups-21.sql',
 			'ИБП-22. КА-4': '#/diagnostic/ups/ups-22.sql',
 			'ИБП-23. ШПЗ': '#/diagnostic/ups/ups-23.sql',
-			'ИБП-24. АСК': '#/diagnostic/ups/ups-24.sql'
+			'ИБП-24. АСК': '#/diagnostic/ups/ups-24.sql',
+			'ИБП-25. РЭП СН 1-2': '#/diagnostic/ups/ups-25.sql'
 		}
 	}
 }
