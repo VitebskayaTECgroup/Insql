@@ -37,7 +37,8 @@
 			'ГРУ-1': '#/http://insql.vst.vitebsk.energo.net/mnemonica/el_GRU1/'
 					},
 		'Оперативные схемы КТЦ': {
-			'Главные паропроводы': '#/http://insql.vst.vitebsk.energo.net/mnemonica/oper_ktc/'
+			'Главные паропроводы': '#/http://insql.vst.vitebsk.energo.net/mnemonica/oper_ktc/',
+			'Питательные трубопроводы': '#/http://insql.vst.vitebsk.energo.net/mnemonica/oper_ktc_1/'
 					},
 		'ИБП': '#/http://insql.vst.vitebsk.energo.net/mnemonica/ups/',
 		'Прогноз погоды': '#/http://insql.vst.vitebsk.energo.net/pages/weather/'
@@ -212,6 +213,7 @@
 			'Параметры ТА-3 (аналоги)': '#/diagnostic/service/ta-3-analog.sql',
 			'Параметры ТА-3 (дискреты)': '#/diagnostic/service/ta-3-discrete.sql',
 			'Температура в шкафах': '#/diagnostic/service/temperatures.sql',
+			'Т и влажность в шкафах контроллеров, СТКЭР т/г ст. №2,3': '#/diagnostic/service/humidity.sql',
 			'Двери шкафов контроллеров': '#/diagnostic/service/doors.sql',
 			'Состояние СПТ': '#/diagnostic/service/spt.sql',
 			'Состояние СТК-ЭР': '#/diagnostic/service/stk-er.sql',
