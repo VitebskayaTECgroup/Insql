@@ -213,6 +213,7 @@
 			'Параметры ТА-3 (аналоги)': '#/diagnostic/service/ta-3-analog.sql',
 			'Параметры ТА-3 (дискреты)': '#/diagnostic/service/ta-3-discrete.sql',
 			'Температура в шкафах': '#/diagnostic/service/temperatures.sql',
+			'Температура и влажность в шкафах контроллеров': '#/diagnostic/service/humidity.sql',
 			'Двери шкафов контроллеров': '#/diagnostic/service/doors.sql',
 			'Состояние СПТ': '#/diagnostic/service/spt.sql',
 			'Состояние СТК-ЭР': '#/diagnostic/service/stk-er.sql',
