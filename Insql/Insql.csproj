@@ -99,9 +99,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="packages.config" />
-    <None Include="Properties\PublishProfiles\ASU.pubxml" />
     <None Include="Properties\PublishProfiles\INSQL1.pubxml" />
     <None Include="Properties\PublishProfiles\INSQL2.pubxml" />
+    <None Include="Properties\PublishProfiles\PROJECT.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\index.css" />
@@ -277,6 +277,7 @@
     <Content Include="Content\sql\diagnostic\ups\ups-21.sql" />
     <Content Include="Content\sql\diagnostic\ups\ups-22.sql" />
     <Content Include="Content\sql\diagnostic\ups\ups-23.sql" />
+    <Content Include="Content\sql\diagnostic\ups\ups-25.sql" />
     <Content Include="Content\sql\diagnostic\ups\ups-24.sql" />
     <Content Include="Content\sql\views\economy\ecom-old.sql" />
     <Content Include="Content\sql\views\economy\ecom.sql" />
