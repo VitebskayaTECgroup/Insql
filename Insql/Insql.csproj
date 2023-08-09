@@ -145,6 +145,7 @@
     <Content Include="Content\sql\counters\gas\old-hour.sql" />
     <Content Include="Content\sql\counters\gas\old-up.sql" />
     <Content Include="Content\sql\counters\gas\up.sql" />
+    <Content Include="Content\sql\counters\grp.sql" />
     <Content Include="Content\sql\counters\gidrozatvor.sql" />
     <Content Include="Content\sql\counters\heat\dok.sql" />
     <Content Include="Content\sql\counters\heat\heat-balance.sql" />

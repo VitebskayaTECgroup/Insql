@@ -190,7 +190,8 @@
 			'Баланс по э/э': '#/counters/ecom/balance.sql',
 			'Диагностика фидеров': '#/counters/ecom/diagnostic.sql'
 		},
-		'Гидрозатвор': '#/counters/gidrozatvor.sql'
+		'Гидрозатвор': '#/counters/gidrozatvor.sql',
+		'ГРП': '#/counters/grp.sql'
 	},
 	'СВОДНЫЕ ВЕДОМОСТИ': {
 		'ПОКАЗАТЕЛИ ЭКОНОМИЧНОСТИ': {
