@@ -38,7 +38,8 @@
 		},
 		'Оперативные схемы КТЦ': {
 			'Главные паропроводы': '#/http://server/mnemonica/oper_ktc/',
-			'Питательные трубопроводы': '#/http://server/mnemonica/oper_ktc_1/'
+			'Питательные трубопроводы': '#/http://server/mnemonica/oper_ktc_1/',
+			'Циркуляционная вода': '#/http://server/mnemonica/oper_ktc_2/'
 		},
 		'ИБП': '#/http://server/mnemonica/ups/',
 		'Прогноз погоды': '#/http://server/pages/weather/'
