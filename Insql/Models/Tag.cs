@@ -100,5 +100,9 @@ namespace Insql.Models
 		public string TagName { get; set; }
 
 		public float Value { get; set; }
+
+		public string vValue { get; set; }
+
+		public int Quality { get; set; }
 	}
 }

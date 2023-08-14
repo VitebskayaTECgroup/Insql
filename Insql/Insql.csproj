@@ -82,6 +82,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\editor.css" />
     <Content Include="Content\export\export.xls" />
     <Content Include="Content\fonts\MaterialIcons-Regular.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -296,6 +297,8 @@
     <Content Include="Content\widgets\timepicker\timepicker.js" />
     <Content Include="Pages\Alarms\Export.aspx" />
     <Content Include="Pages\Alarms\Default.aspx" />
+    <Content Include="Pages\Editor\EditorWorker.aspx" />
+    <Content Include="Pages\Editor\Default.aspx" />
     <Content Include="Pages\Data\Edit.aspx" />
     <Content Include="Pages\Data\Export.aspx" />
     <Content Include="Pages\Data\Table.aspx" />

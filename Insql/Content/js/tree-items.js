@@ -223,7 +223,8 @@
 			'G пара': '#/diagnostic/service/instant-steam.sql',
 			'G КО': '#/diagnostic/service/instant-ko.sql',
 			'ЭГСАР': '#/diagnostic/service/esgar.sql',
-			'Системный лог InSql': '#/diagnostic/service/insql.sql'
+			'Системный лог InSql': '#/diagnostic/service/insql.sql',
+			'Перезапись значений': host + 'pages/editor/'
 			/*'Время опроса на счётчиках': '#/diagnostic/service/time.sql',*/
 		},
 		'ИБП': {
