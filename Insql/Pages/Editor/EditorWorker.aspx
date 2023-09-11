@@ -22,21 +22,6 @@
 
 			if (!string.IsNullOrEmpty(tag))
 			{
-				//values = conn.Query<Insql.Models.Tag>(@"SELECT
-				//	TagName,
-				//	DateTime,
-				//	vValue as Value,
-				//	Quality
-				//FROM
-				//	v_History
-				//WHERE
-				//	TagName = @TagName
-				//	AND DateTime >= @Start
-				//	AND DateTime <= @Finish
-				//	AND wwRetrievalMode = 'DELTA'
-				//ORDER BY
-				//	DateTime", new { TagName = tag, Start = start, Finish = finish }).AsList();
-
 				conn.Execute("EXEC [dbo].[vst_InsertManual_Range] '@Start', '@Finish', '@TagName', @Value, 1"
 					.Replace("@TagName", tag)
 					.Replace("@Value", value)

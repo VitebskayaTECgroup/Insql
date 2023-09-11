@@ -30,8 +30,8 @@
 				TagName = '@TagName'
 				AND DateTime >= '@Start'
 				AND DateTime <= '@Finish'
-				AND wwVersion = 'LATEST'
-				AND wwRetrievalMode = 'DELTA'
+				AND wwVersion = 'Latest'
+				AND wwRetrievalMode = 'Delta'
 			ORDER BY
 				DateTime"
 				.Replace("@TagName", tag)
@@ -54,7 +54,7 @@
 	<link rel="stylesheet" href="<%=(ResolveClientUrl("~/content/css/editor.css") + "?" + r)%>" />
 </head>
 <body>
-	<form method="get" action="/pages/editor/" class="form">
+	<form method="get" action="./" class="form">
 		<div>
 			<span>Сервер</span>
 			<select id="server" name="server">
@@ -132,7 +132,7 @@
 			form.append('finish', document.getElementById('finish').value)
 			form.append('server', document.getElementById('server').value)
 
-			fetch('/pages/editor/EditorWorker.aspx', { method: 'POST', body: form })
+			fetch('./EditorWorker.aspx', { method: 'POST', body: form })
 				.then(res => res.text())
 				.then(text => alert(text || 'Запрос выполнен'))
 		}

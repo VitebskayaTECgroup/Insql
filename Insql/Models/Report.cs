@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Odbc;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 
@@ -282,6 +283,8 @@ namespace Insql.Models
 						command.Connection = conn;
 						command.CommandText = Sql;
 						command.CommandTimeout = 240;
+
+						Debug.WriteLine(Sql);
 
 						using (var reader = command.ExecuteReader())
 						{
