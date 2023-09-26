@@ -18,10 +18,12 @@ SELECT
 	CAST(K03_Pwater as decimal(15, 2)) as "К/О №3, P пит. воды, МПа [K03_Pwater]",
 	null,
 	CAST(K04_Tperpar as decimal(15, 2)) as "К/О №4, T перегр. пара за котлом, °С [K04_Tperpar]",
-	CAST(K04_Hwater as decimal(15, 2)) as "К/О №4, уровень воды в барабане, мм [K04_Hwater]"
+	CAST(K04_Hwater as decimal(15, 2)) as "К/О №4, уровень воды в барабане, мм [K04_Hwater]",
+	null,
+	CAST(K05_Hwater as decimal(15, 2)) as "К/О №5, уровень воды в барабане, мм [K05_Hwater]"
 FROM
 	OpenQuery(INSQL,
-	"SELECT DateTime, K03_WaterLevel, K03_TPerPar, K03_Gwater1st, K03_Gwater2st, K03_Pbaraban, K03_Pperpar, K03_Pwater, K04_Tperpar, K04_Hwater
+	"SELECT DateTime, K03_WaterLevel, K03_TPerPar, K03_Gwater1st, K03_Gwater2st, K03_Pbaraban, K03_Pperpar, K03_Pwater, K04_Tperpar, K04_Hwater, K05_Hwater
 	FROM Runtime.dbo.AnalogWideHistory
 	WHERE wwVersion = 'Latest'
 	AND wwRetrievalMode = 'Cyclic'
@@ -50,10 +52,12 @@ SELECT
 	CAST(K03_Pwater as decimal(15, 2)) as "К/О №3, P пит. воды, МПа [K03_Pwater]",
 	null,
 	CAST(K04_Tperpar as decimal(15, 2)) as "К/О №4, T перегр. пара за котлом, °С [K04_Tperpar]",
-	CAST(K04_Hwater as decimal(15, 2)) as "К/О №4, уровень воды в барабане, мм [K04_Hwater]"
+	CAST(K04_Hwater as decimal(15, 2)) as "К/О №4, уровень воды в барабане, мм [K04_Hwater]",
+	null,
+	CAST(K05_Hwater as decimal(15, 2)) as "К/О №5, уровень воды в барабане, мм [K05_Hwater]"
 FROM
 	OpenQuery(INSQL,
-	"SELECT DateTime, K03_WaterLevel, K03_TPerPar, K03_Gwater1st, K03_Gwater2st, K03_Pbaraban, K03_Pperpar, K03_Pwater, K04_Tperpar, K04_Hwater
+	"SELECT DateTime, K03_WaterLevel, K03_TPerPar, K03_Gwater1st, K03_Gwater2st, K03_Pbaraban, K03_Pperpar, K03_Pwater, K04_Tperpar, K04_Hwater, K05_Hwater
 	FROM Runtime.dbo.AnalogWideHistory
 	WHERE wwVersion = 'Latest'
 	AND wwRetrievalMode = 'Cyclic'
@@ -81,10 +85,12 @@ SELECT
 	CAST(K03_Pwater as decimal(15, 2)) as "К/О №3, P пит. воды, МПа [K03_Pwater]",
 	null,
 	CAST(K04_Tperpar as decimal(15, 2)) as "К/О №4, T перегр. пара за котлом, °С [K04_Tperpar]",
-	CAST(K04_Hwater as decimal(15, 2)) as "К/О №4, уровень воды в барабане, мм [K04_Hwater]"
+	CAST(K04_Hwater as decimal(15, 2)) as "К/О №4, уровень воды в барабане, мм [K04_Hwater]",
+	null,
+	CAST(K05_Hwater as decimal(15, 2)) as "К/О №5, уровень воды в барабане, мм [K05_Hwater]"
 FROM
 	OpenQuery(INSQL,
-	"SELECT DateTime, K03_WaterLevel, K03_TPerPar, K03_Gwater1st, K03_Gwater2st, K03_Pbaraban, K03_Pperpar, K03_Pwater, K04_Tperpar, K04_Hwater
+	"SELECT DateTime, K03_WaterLevel, K03_TPerPar, K03_Gwater1st, K03_Gwater2st, K03_Pbaraban, K03_Pperpar, K03_Pwater, K04_Tperpar, K04_Hwater, K05_Hwater
 	FROM Runtime.dbo.AnalogWideHistory
 	WHERE wwVersion = 'Latest'
 	AND wwRetrievalMode = 'Cyclic'
@@ -115,10 +121,12 @@ SELECT
 	CAST(AVG(K03_Pwater) as decimal(15, 2)) as "К/О №3, P пит. воды, МПа [K03_Pwater]",
 	null,
 	CAST(AVG(K04_Tperpar) as decimal(15, 2)) as "К/О №4, T перегр. пара за котлом, °С [K04_Tperpar]",
-	CAST(AVG(K04_Hwater) as decimal(15, 2)) as "К/О №4, уровень воды в барабане, мм [K04_Hwater]"
+	CAST(AVG(K04_Hwater) as decimal(15, 2)) as "К/О №4, уровень воды в барабане, мм [K04_Hwater]",
+	null,
+	CAST(AVG(K05_Hwater) as decimal(15, 2)) as "К/О №5, уровень воды в барабане, мм [K05_Hwater]"
 FROM
 	OpenQuery(INSQL,
-	"SELECT DateTime, K03_WaterLevel, K03_TPerPar, K03_Gwater1st, K03_Gwater2st, K03_Pbaraban, K03_Pperpar, K03_Pwater, K04_Tperpar, K04_Hwater
+	"SELECT DateTime, K03_WaterLevel, K03_TPerPar, K03_Gwater1st, K03_Gwater2st, K03_Pbaraban, K03_Pperpar, K03_Pwater, K04_Tperpar, K04_Hwater, K05_Hwater
 	FROM Runtime.dbo.AnalogWideHistory
 	WHERE wwVersion = 'Latest'
 	AND wwRetrievalMode = 'Cyclic'
