@@ -194,6 +194,7 @@
     <Content Include="Content\sql\devices\boilers\ka2\boiler.sql" />
     <Content Include="Content\sql\devices\boilers\ka3\boiler.sql" />
     <Content Include="Content\sql\devices\boilers\ka3\checks.sql" />
+    <Content Include="Content\sql\devices\boilers\ka4\gas.sql" />
     <Content Include="Content\sql\devices\boilers\ka4\checks.sql" />
     <Content Include="Content\sql\devices\boilers\ka4\boiler.sql" />
     <Content Include="Content\sql\devices\boilers\ka5\boiler.sql" />
