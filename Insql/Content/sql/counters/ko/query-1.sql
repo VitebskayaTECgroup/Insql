@@ -12,8 +12,8 @@ SELECT
 	CAST(V01_VK12T001*V01_SY00A700 as decimal(15,2)) as "T ПСВ до подмеса, °С [V01_VK12T001]",
 	CAST(V01_VK11T001*V01_SY00A700 as decimal(15,2)) as "T ПСВ, °С [V01_VK11T001]",
 	CAST(V01_VK22T001*V01_SY00A700 as decimal(15,2)) as "T ОСВ до подмеса, °С [V01_VK22T001]",
-	--CAST(V01_VK21T001*V01_SY00A700 as decimal(15,2)) as "T ОСВ, °С [V01_VK21T001]"
-	CASE WHEN (V01_VK21T001 >= (dbo.vst_GetTempFromGrafik(U1_Tnv_3_4)+0.5) OR V01_VK21T001 < (dbo.vst_GetTempFromGrafik(U1_Tnv_3_4)-0.5)) THEN CAST((dbo.vst_GetTempFromGrafik(U1_Tnv_3_4)+RAND(CHECKSUM(NEWID()))-0.5) as decimal(15,2)) ELSE CAST(V01_VK21T001*V01_SY00A700 as decimal(15,2)) END AS "T ОСВ, °С [V01_VK21T001]"
+	CAST(V01_VK21T001*V01_SY00A700 as decimal(15,2)) as "T ОСВ, °С [V01_VK21T001]"
+	--CASE WHEN (V01_VK21T001 >= (dbo.vst_GetTempFromGrafik(U1_Tnv_3_4)+0.5) OR V01_VK21T001 < (dbo.vst_GetTempFromGrafik(U1_Tnv_3_4)-0.5)) THEN CAST((dbo.vst_GetTempFromGrafik(U1_Tnv_3_4)+RAND(CHECKSUM(NEWID()))-0.5) as decimal(15,2)) ELSE CAST(V01_VK21T001*V01_SY00A700 as decimal(15,2)) END AS "T ОСВ, °С [V01_VK21T001]"
 FROM
 	OpenQuery(INSQL, 
 	"SELECT DateTime, V01_VK11T001, V01_SY00A700, V01_VK21T001, V01_VK11F001, V01_VK21F001, V01_VK12T001, V01_VK22T001, U1_Tnv_3_4
@@ -40,8 +40,8 @@ SELECT
 	CAST(V01_VK12T001_H1 as decimal(15,2)) as "T ПСВ до подмеса за п/ч, °С [V01_VK12T001_H1]",
 	CAST(V01_VK11T001_H1 as decimal(15,2)) as "T ПСВ за п/ч, °С [V01_VK11T001_H1]",
 	CAST(V01_VK22T001_H1 as decimal(15,2)) as "T ОСВ до подмеса за п/ч, °С [V01_VK22T001_H1]",
-	--CAST(V01_VK21T001_H1 as decimal(15,2)) as "T ОСВ за п/ч, °С [V01_VK21T001_H1]",
-	CASE WHEN (V01_VK21T001_H1 >= (dbo.vst_GetTempFromGrafik(U1_Tnv_3_4)+0.5) OR V01_VK21T001_H1 < (dbo.vst_GetTempFromGrafik(U1_Tnv_3_4)-0.5)) THEN CAST((dbo.vst_GetTempFromGrafik(U1_Tnv_3_4)+RAND(CHECKSUM(NEWID()))-0.5) as decimal(15,2)) ELSE CAST(V01_VK21T001_H1*V01_SY00A700 as decimal(15,2)) END AS "T ОСВ, °С [V01_VK21T001]",
+	CAST(V01_VK21T001_H1 as decimal(15,2)) as "T ОСВ за п/ч, °С [V01_VK21T001_H1]",
+	--CASE WHEN (V01_VK21T001_H1 >= (dbo.vst_GetTempFromGrafik(U1_Tnv_3_4)+0.5) OR V01_VK21T001_H1 < (dbo.vst_GetTempFromGrafik(U1_Tnv_3_4)-0.5)) THEN CAST((dbo.vst_GetTempFromGrafik(U1_Tnv_3_4)+RAND(CHECKSUM(NEWID()))-0.5) as decimal(15,2)) ELSE CAST(V01_VK21T001_H1*V01_SY00A700 as decimal(15,2)) END AS "T ОСВ, °С [V01_VK21T001]",
 	CAST(V01_VK11W001_H1 as decimal(15,2)) as "W ПСВ за п/ч, ГДж [V01_VK11W001_H1]",
 	CAST(V01_VK21W001_H1 as decimal(15,2)) as "W ОСВ за п/ч, ГДж [V01_VK21W001_H1]",
 	CAST(V01_VK31W001_H1 as decimal(15,2)) as "W по МАГ. за п/ч, ГДж [V01_VK31W001_H1]"
@@ -73,8 +73,8 @@ SELECT
 	CAST(V01_VK12T001_S1 as decimal(15,2)) as "T ПСВ до подмеса за п/с, °С [V01_VK12T001_S1]",
 	CAST(V01_VK11T001_S1 as decimal(15,2)) as "T ПСВ за п/с, °С [V01_VK11T001_S1]",
 	CAST(V01_VK22T001_S1 as decimal(15,2)) as "T ОСВ до подмеса за п/с, °С [V01_VK22T001_S1]",
-	--CAST(V01_VK21T001_S1 as decimal(15,2)) as "T ОСВ за п/с, °С [V01_VK21T001_S1]",
-	CASE WHEN (V01_VK21T001_S1 >= (dbo.vst_GetTempFromGrafik(U1_Tnv_3_4)+0.5) OR V01_VK21T001_S1 < (dbo.vst_GetTempFromGrafik(U1_Tnv_3_4)-0.5)) THEN CAST((dbo.vst_GetTempFromGrafik(U1_Tnv_3_4)+RAND(CHECKSUM(NEWID()))-0.5) as decimal(15,2)) ELSE CAST(V01_VK21T001_S1*V01_SY00A700 as decimal(15,2)) END AS "T ОСВ, °С [V01_VK21T001]",
+	CAST(V01_VK21T001_S1 as decimal(15,2)) as "T ОСВ за п/с, °С [V01_VK21T001_S1]",
+	--CASE WHEN (V01_VK21T001_S1 >= (dbo.vst_GetTempFromGrafik(U1_Tnv_3_4)+0.5) OR V01_VK21T001_S1 < (dbo.vst_GetTempFromGrafik(U1_Tnv_3_4)-0.5)) THEN CAST((dbo.vst_GetTempFromGrafik(U1_Tnv_3_4)+RAND(CHECKSUM(NEWID()))-0.5) as decimal(15,2)) ELSE CAST(V01_VK21T001_S1*V01_SY00A700 as decimal(15,2)) END AS "T ОСВ, °С [V01_VK21T001]",
 	CAST(V01_VK11W001_S1 as decimal(15,2)) as "W ПСВ за п/с, ГДж [V01_VK11W001_S1]",
 	CAST(V01_VK21W001_S1 as decimal(15,2)) as "W ОСВ за п/с, ГДж [V01_VK21W001_S1]",
 	CAST(V01_VK31W001_S1 as decimal(15,2)) as "dW по МАГ. за п/с, ГДж [V01_VK31W001_S1]"
