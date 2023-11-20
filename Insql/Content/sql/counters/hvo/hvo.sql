@@ -15,10 +15,23 @@ SELECT
 	CAST(isnull(H02_VB11g001,0)*isnull(H02_SY00A700,0) as decimal(15,2)) as "G сырой воды на осв-ль №2, т/ч [H02_VB11g001]",
 	CAST(isnull(H02_VA22F001,0)*isnull(H02_SY00A700,0) as decimal(15,2)) as "G ХОВ ХВО II, т/ч [H02_VA22F001]",
 	CAST(isnull(H02_VB12F001,0)*isnull(H02_SY00A700,0) as decimal(15,2)) as "G сырой воды на осв-ль №1, т/ч [H02_VB12F001]",
-	CAST(isnull(H02_KK11_F001,0)*isnull(H02_SY00A700,0) as decimal(15,2)) as "G к-та в бак декарб.воды, т/ч [H02_KK11_F001]"
+	CAST(isnull(H02_KK11_F001,0)*isnull(H02_SY00A700,0) as decimal(15,2)) as "G к-та в бак декарб.воды, т/ч [H02_KK11_F001]",
+	Round((Isnull(H02_VB11G001, 0) + H02_VB12F001) - H01_VA21F001 * 1.28 - U04_UM41F001 * 0.97 * 1.12, 2) as "Собственные нужды, т/ч [Hint:(Isnull(H02_VB11G001, 0) + H02_VB12F001) - H01_VA21F001 * 1.28 - U04_UM41F001 * 0.97 * 1.12]"
 FROM
 	OpenQuery(INSQL,
-	"SELECT DateTime, H02_KK11_F001,H02_VB12F001, H02_VA22F001, H01_KB21F001, H01_SY00A700, H02_SY00A700, H01_KC21F001, H01_VA21F001, H02_KB11F001, H02_VB11g001, H01_KC22F001
+	"SELECT DateTime,
+		H02_KK11_F001,
+		H02_VB12F001,
+		H02_VA22F001,
+		H01_KB21F001,
+		H01_SY00A700,
+		H02_SY00A700,
+		H01_KC21F001,
+		H01_VA21F001,
+		H02_KB11F001,
+		H02_VB11g001,
+		H01_KC22F001,
+		U04_UM41F001
 	FROM Runtime.dbo.AnalogWideHistory
 	WHERE wwVersion = 'Latest'
 	AND wwRetrievalMode = 'Cyclic'
@@ -45,10 +58,24 @@ SELECT
 	CAST(isnull(H02_VB11F001_H1,0) as decimal(15,2)) as "G сыр.воды на осв-ль №2 за п/ч, т/ч [H02_VB11F001_H1]",
 	CAST(isnull(H02_VA22F001_H1,0) as decimal(15,2)) as "G ХОВ ХВО II за п/ч, т/ч [H02_VA22F001_H1]",
 	CAST(isnull(H02_VB12F001_H1,0) as decimal(15,2)) as "G сыр.воды на осв-ль №1 за п/ч, т/ч [H02_VB12F001_H1]",
-	CAST(isnull(H02_KK11_F001_H1,0) as decimal(15,2)) as "G к-та в бак декарб.воды за п/ч, т/ч [H02_KK11_F001_H1]"
+	CAST(isnull(H02_KK11_F001_H1,0) as decimal(15,2)) as "G к-та в бак декарб.воды за п/ч, т/ч [H02_KK11_F001_H1]",
+	Round(U04_UM41F001_H1, 2) as "Масса ПОДПИТКИ за прошедший час (4-210т3н01) [U04_UM41F001_H1]",
+	Round((Isnull(Cast(H02_VB11F001_H1 as decimal(15,6)), 0) + H02_VB12F001_H1) - H01_VA21F001_H1 * 1.28 - U04_UM41F001_H1 * 0.97 * 1.12, 2) as "Собственные нужды, т/ч"
 FROM
 	OpenQuery(INSQL,
-	"SELECT DateTime,  H02_KK11_F001_H1, H02_VA22F001_H1, H02_VB12F001_H1, H01_KB21F001_H1, H01_KC21F001_H1, H02_VB11F001_H1, H01_VA21F001_H1, H02_KB11F001_H1, H01_KC22F001_H1 FROM Runtime.dbo.AnalogWideHistory
+	"SELECT DateTime,
+		H02_KK11_F001_H1,
+		H02_VA22F001_H1,
+		H02_VB12F001_H1,
+		H01_KB21F001_H1,
+		H01_KC21F001_H1,
+		H02_VB11F001_H1,
+		H01_VA21F001_H1,
+		H02_KB11F001_H1,
+		H01_KC22F001_H1,
+		H02_VB11G001_H1,
+		U04_UM41F001_H1
+	FROM Runtime.dbo.AnalogWideHistory
 	WHERE wwVersion = 'Latest'
 	AND wwRetrievalMode = 'Cyclic'
 	AND wwResolution = @resolution
@@ -74,12 +101,24 @@ SELECT
 	CAST(isnull(H02_VB11F001_S1,0) as decimal(15,2)) as "G сыр.воды на осв-ль №2 за п/с, т/сут [H02_VB11F001_S1]",
 	CAST(isnull(H02_VA22F001_S1,0) as decimal(15,2)) as "G ХОВ ХВО II за п/с, т/сут [H02_VA22F001_S1]",
 	CAST(isnull(H02_VB12F001_S1,0) as decimal(15,2)) as "G сыр.воды на осв-ль №1 за п/с, т/сут [H02_VB12F001_S1]",
-	CAST(isnull(H02_KK11_F001_S1,0) as decimal(15,2)) as "G к-та в бак декарб.воды за п/с, т/сут [H02_KK11_F001_S1]"
+	CAST(isnull(H02_KK11_F001_S1,0) as decimal(15,2)) as "G к-та в бак декарб.воды за п/с, т/сут [H02_KK11_F001_S1]",
+	Round(U04_UM41F001_S1, 2) as "Масса Подпитки за прошедшие сутки (4-3-211-01) [U04_UM41F001_S1]",
+	Round((Isnull(H02_VB11F001_S1, 0) + H02_VB12F001_S1) - H01_VA21F001_S1 * 1.28 - U04_UM41F001_S1 * 0.97 * 1.12, 2) as "Собственные нужды, т/ч"
 FROM
 	OpenQuery(INSQL, 
-	"SELECT DateTime, H02_KK11_F001_S1, H02_VA22F001_S1,
-	H02_VB12F001_S1,
-	H01_KB21F001_S1, H01_KC21F001_S1, H02_VB11F001_S1, H01_VA21F001_S1, H02_KB11F001_S1, H01_KC22F001_S1 FROM Runtime.dbo.AnalogWideHistory 
+	"SELECT DateTime, 
+		H02_KK11_F001_S1,
+		H02_VA22F001_S1,
+		H02_VB12F001_S1,
+		H01_KB21F001_S1,
+		H01_KC21F001_S1,
+		H02_VB11F001_S1,
+		H01_VA21F001_S1,
+		H02_KB11F001_S1,
+		H01_KC22F001_S1,
+		U04_UM41F001_S1,
+		H02_VB11G001_S1
+	FROM Runtime.dbo.AnalogWideHistory 
 	WHERE wwVersion = 'Latest'
 	AND wwRetrievalMode = 'Cyclic'
 	AND wwResolution = @resolution
