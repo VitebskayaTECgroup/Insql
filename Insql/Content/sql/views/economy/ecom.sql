@@ -609,3 +609,28 @@ GROUP BY
 	CHAR(192+Runtime.dbo.vst_GetShiftNumber(DateTime))
 ORDER BY
 	CHAR(192+Runtime.dbo.vst_GetShiftNumber(DateTime))
+
+
+{часовые срезы исходные}
+/*ReportName="Показатели экономичности (эком)" (срезы на конец часа)*/
+/*Mode=часовые-1*/
+/*DownQuery="часовые срезы по сменам 8/12"*/
+/*UpQuery="суточные срезы"*/
+
+SET QUOTED_IDENTIFIER OFF
+SELECT
+	*
+FROM 
+	OpenQuery(INSQL,
+	"SELECT DateTime, CLC_ShiftDuty,
+	U04_UM11W002_H1, U06_UM11W002_H1, U07_UM11W002_H1, U05_UM11W002_H1, U04_UM21W002_H1, U06_UM21W002_H1, U06_UM22W002_H1, U07_UM21W002_H1, U05_UM21W002_H1,
+	L01_EB10P000_H1, L02_EB10P000_H1, L07_EB10P000_H1, L08_EB10P000_H1, L09_EB10P000_H1, L67_EB10P000_H1, L20_EB10P000_H1, L21_EB10P000_H1, L22_EB10P000_H1, 
+	U04_UM11W001_H1, U04_UM21W001_H1, U08_UM31W001_H1, U08_UM21W002_H1, U08_UM11W002_H1,
+	L23_EB10P000_H1, MI_URT_OE, U04_UM31W001_H1, U06_UM31W001_H1, U07_UM31W001_H1, U05_UM31W001_H1, U01_UN31W001_H1, U02_UN31W001_H1, U03_UN31W001_H1,
+	G01_AM31Q701_H1, G00_AF00W102
+	FROM Runtime.dbo.AnalogWideHistory
+	WHERE wwVersion = 'Latest'
+	AND wwRetrievalMode = 'Cyclic'
+	AND wwResolution = @resolution
+	AND DateTime >= @start
+	AND DateTime <= @finish")
