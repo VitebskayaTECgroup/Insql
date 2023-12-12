@@ -6,7 +6,12 @@
 	string end = Request.Form.Get("e");
 	string server = Request.Form.Get("server");
 
-	var model = new Insql.Models.Report().ToQuery(server, tags, resolution, start, end);
+	int res = 60000;
+	if (resolution == "1") { res = 1000; }
+	else if (resolution == "3") { res = 1000 * 60 * 60; }
+	else if (resolution == "4") { res = 0; }
+
+	var model = new Insql.Models.Report().ToQuery(server, tags, res.ToString(), start, end);
 %>
 
 <div class="right view-table">

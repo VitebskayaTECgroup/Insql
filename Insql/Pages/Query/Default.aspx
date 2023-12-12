@@ -62,6 +62,7 @@
 			<span>до</span>
 			<input type="date" id="controls-date-end" value="<%=DateTime.Now.ToString("yyyy-MM-dd")%>" />
 			<input type="time" id="controls-time-end" value="<%=DateTime.Now.ToString("HH:mm:00")%>" />
+			<button id="controls-reload">▶</button>
 		</div>
 		<div class="right view" id="view"></div>
 	</div>

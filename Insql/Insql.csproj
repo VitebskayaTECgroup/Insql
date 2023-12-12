@@ -307,6 +307,7 @@
     <Content Include="Pages\Query\Graph.aspx" />
     <Content Include="Pages\Query\Export.aspx" />
     <Content Include="Pages\Query\Table.aspx" />
+    <Content Include="Pages\Query\AllTags.aspx" />
     <Content Include="Pages\Query\Tags.aspx" />
     <Content Include="Pages\Query\SelectedTags.aspx" />
     <Content Include="Pages\Query\Default.aspx" />

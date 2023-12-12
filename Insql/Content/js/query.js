@@ -114,7 +114,7 @@ function hashReset() {
  * @param {string} key
  * @param {string} value
  */
-function hashSet(key, value) {
+function hashSet(key, value, noReload) {
 	console.log('set hash')
 	if (isArray(Hash[key])) {
 		console.log(key, '= array')
@@ -136,7 +136,7 @@ function hashSet(key, value) {
 		}
 		
 	}
-	location.hash = hash.join('|')
+	if (!noReload) location.hash = hash.join('|')
 }
 
 /** Выполнение действий с сервером исходя из параметров */
@@ -299,23 +299,10 @@ document.getElementById('server').onchange = function (e) {
 	hashSet('server', document.getElementById('server').value)
 }
 
-document.getElementById('controls-cycle').onkeypress = function () {
-	hashSet('c', document.getElementById('controls-cycle').value)
-}
-
-document.getElementById('controls-date-start').onkeypress = function () {
-	hashSet('s', document.getElementById('controls-date-start').value + ' ' + document.getElementById('controls-time-start').value)
-}
-
-document.getElementById('controls-time-start').onkeypress = function () {
-	hashSet('s', document.getElementById('controls-date-start').value + ' ' + document.getElementById('controls-time-start').value)
-}
-
-document.getElementById('controls-date-end').onkeypress = function () {
-	hashSet('e', document.getElementById('controls-date-end').value + ' ' + document.getElementById('controls-time-end').value)
-}
-
-document.getElementById('controls-time-end').onkeypress = function () {
+// кнопка play
+document.getElementById('controls-reload').onclick = function () {
+	hashSet('c', document.getElementById('controls-cycle').value, true)
+	hashSet('s', document.getElementById('controls-date-start').value + ' ' + document.getElementById('controls-time-start').value, true)
 	hashSet('e', document.getElementById('controls-date-end').value + ' ' + document.getElementById('controls-time-end').value)
 }
 
