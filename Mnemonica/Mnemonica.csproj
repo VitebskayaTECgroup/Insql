@@ -67,23 +67,42 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="API\Vst\History.aspx" />
     <Content Include="API\Vst\Live.aspx" />
     <Content Include="API\Vst\Update.aspx" />
     <Content Include="API\Vst\Create.aspx" />
+    <Content Include="Content\jquery-1.12.4.min.js" />
+    <Content Include="Content\jquery-ui.min.css" />
+    <Content Include="Content\jquery-ui.min.js" />
+    <TypeScriptCompile Include="Content\mnemonica.ts" />
     <Content Include="Default.aspx" />
     <Content Include="Web.config" />
+    <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\DatabaseContext.cs" />
     <Compile Include="Database\VstTag.cs" />
     <Compile Include="Database\VstTagHistory.cs" />
     <Compile Include="Database\VstTagLive.cs" />
+    <Compile Include="Models\EvalProps.cs" />
+    <Compile Include="Models\ImageElement.cs" />
+    <Compile Include="Models\ImageState.cs" />
+    <Compile Include="Models\Scheme.cs" />
+    <Compile Include="Models\TextElement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="API\Insql\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Content\types.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
