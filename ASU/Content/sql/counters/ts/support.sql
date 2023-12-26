@@ -7,10 +7,10 @@ SET QUOTED_IDENTIFIER OFF
 SELECT
 	DateTime as "Дата",
 	null,
-	CAST(U04_UM41F001*U04_SY00A700 as decimal(15,0)) as "G Подп.ТС, т/ч [U04_UM41F001]",
-	CAST(U04_UM41P001*U04_SY00A700 as decimal(15,2)) as "P Подп.ТС, изб.МПа [U04_UM41P001]",
-	CAST(U04_UM41T001*U04_SY00A700 as decimal(15,2)) as "T Подп.ТС, °С [U04_UM41T001]",
-	CAST(U04_VB00T001*U04_SY00A700 as decimal(15,2)) as "Тхв, °С [U04_VB00T001]"
+	CAST(U04_UM41F001*U04_SY00A700 as decimal(18,0)) as "G Подп.ТС, т/ч [U04_UM41F001]",
+	CAST(U04_UM41P001*U04_SY00A700 as decimal(18,2)) as "P Подп.ТС, изб.МПа [U04_UM41P001]",
+	CAST(U04_UM41T001*U04_SY00A700 as decimal(18,2)) as "T Подп.ТС, °С [U04_UM41T001]",
+	CAST(U04_VB00T001*U04_SY00A700 as decimal(18,2)) as "Тхв, °С [U04_VB00T001]"
 FROM
 	OpenQuery(INSQL,
 	"SELECT DateTime, U04_VB00T001, U04_SY00A700, U04_UM41P001, U04_UM41T001, U04_UM41F001
@@ -32,11 +32,11 @@ SET QUOTED_IDENTIFIER OFF
 SELECT
 	DateAdd(mi, -5, DateTime) as "Дата",
 	null,
-	CAST(U04_UM41F001_H1 as decimal(15,0)) as "G Подп.ТС за п/ч, т/ч [U04_UM41F001_H1]",
-	CAST(U04_UM41P001_H1 as decimal(15,2)) as "P Подп.ТС за п/ч, абс.МПа [U04_UM41P001_H1]",
-	CAST(U04_UM41T001_H1 as decimal(15,2)) as "T Подп.ТС за п/ч, °С [U04_UM41T001_H1]",
-	CAST(U04_UM41W001_H1 as decimal(15,0)) as "W Подп.ТС за п/ч, ГДж [U04_UM41W001_H1]",
-	CAST(U04_UM32W001_H1 as decimal(15,0)) as "dW по МАГ.за п/ч, ГДж [U04_UM32W001_H1]",
+	CAST(U04_UM41F001_H1 as decimal(18,0)) as "G Подп.ТС за п/ч, т/ч [U04_UM41F001_H1]",
+	CAST(U04_UM41P001_H1 as decimal(18,2)) as "P Подп.ТС за п/ч, абс.МПа [U04_UM41P001_H1]",
+	CAST(U04_UM41T001_H1 as decimal(18,2)) as "T Подп.ТС за п/ч, °С [U04_UM41T001_H1]",
+	CAST(U04_UM41W001_H1 as decimal(18,0)) as "W Подп.ТС за п/ч, ГДж [U04_UM41W001_H1]",
+	CAST(U04_UM32W001_H1 as decimal(18,0)) as "dW по МАГ.за п/ч, ГДж [U04_UM32W001_H1]",
 	CAST(U04_VB00T001*U04_SY00A700 as decimal(15,2)) as "Тхв мгн, °С [Мгновенный срез Т источника на конец часа]"
 FROM
 	OpenQuery(INSQL,
@@ -59,12 +59,12 @@ SET QUOTED_IDENTIFIER OFF
 SELECT
 	DateAdd(mi, -1445, DateTime) as "Дата",
 	null,
-	CAST(U04_UM41F001_S1 as decimal(9,0)) as "G Подп.ТС за п/с, т/сут [U04_UM41F001_S1]",
-	CAST(U04_UM41P001_S1 as decimal(9,2)) as "P Потп.ТС за п/с, абс.МПа [U04_UM41P001_S1]",
-	CAST(U04_UM41T001_S1 as decimal(9,2)) as "T Потп.ТС за п/с, °С [U04_UM41T001_S1]",
-	CAST(U04_UM41W001_S1 as decimal(9,0)) as "W Подп.ТС за п/с, ГДж [U04_UM41W001_S1 ]",
-	CAST(U04_UM32W001_S1 as decimal(9,0)) as "dW по МАГ за п/с, ГДж [U04_UM32W001_S1]",
-	CAST(U04_VB01T001_S1 as decimal(9,2)) as "Tхв за п/с, °С [U04_VB01T001_S1]"
+	CAST(U04_UM41F001_S1 as decimal(18,0)) as "G Подп.ТС за п/с, т/сут [U04_UM41F001_S1]",
+	CAST(U04_UM41P001_S1 as decimal(18,2)) as "P Потп.ТС за п/с, абс.МПа [U04_UM41P001_S1]",
+	CAST(U04_UM41T001_S1 as decimal(18,2)) as "T Потп.ТС за п/с, °С [U04_UM41T001_S1]",
+	CAST(U04_UM41W001_S1 as decimal(18,0)) as "W Подп.ТС за п/с, ГДж [U04_UM41W001_S1 ]",
+	CAST(U04_UM32W001_S1 as decimal(18,0)) as "dW по МАГ за п/с, ГДж [U04_UM32W001_S1]",
+	CAST(U04_VB01T001_S1 as decimal(18,2)) as "Tхв за п/с, °С [U04_VB01T001_S1]"
 FROM
 	OpenQuery(INSQL, 
 	"SELECT DateTime, U04_VB01T001_S1, U04_UM41T001_S1, U04_UM41P001_S1, U04_UM41F001_S1, U04_UM41W001_S1, U04_UM32W001_S1
