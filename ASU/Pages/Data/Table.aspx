@@ -74,6 +74,9 @@
 		<button onclick="info(true)" style="height: 2.4em;">
 			<span class="img img-info">Инфо</span>
 		</button>
+		<button onclick="toGraph()" style="height: 2.4em;">
+			<span class="img img-info">График</span>
+		</button>
 	</div>
 </div>
 

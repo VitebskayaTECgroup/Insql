@@ -136,6 +136,7 @@
     <Content Include="Content\js\tree-items.js" />
     <Content Include="Content\lib\chartist\chartist.css" />
     <Content Include="Content\lib\chartist\chartist.js" />
+    <Content Include="Content\lib\plotly\plotly-2.28.0.min.js" />
     <Content Include="Content\sql\counters\ecom\active.sql" />
     <Content Include="Content\sql\counters\ecom\balance.sql" />
     <Content Include="Content\sql\counters\ecom\diagnostic.sql" />
@@ -298,6 +299,7 @@
     <Content Include="Content\widgets\timepicker\timepicker.js" />
     <Content Include="Pages\Alarms\Export.aspx" />
     <Content Include="Pages\Alarms\Default.aspx" />
+    <Content Include="Pages\Data\Graph.aspx" />
     <Content Include="Pages\Editor\EditorWorker.aspx" />
     <Content Include="Pages\Editor\Default.aspx" />
     <Content Include="Pages\Data\Edit.aspx" />

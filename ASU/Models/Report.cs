@@ -53,6 +53,10 @@ namespace Insql.Models
 
 		public ReportSummary[] Summaries { get; set; }
 
+		public Dictionary<string, List<float>> Traces { get; set; }
+
+		public List<string> Coords { get; set; }
+
 		// методы
 		public Report ToTable(string path, string query, string server, string date, string step, string down, string live)
 		{
@@ -294,6 +298,8 @@ namespace Insql.Models
 							Headers = new ReportHeader[ColumnsCount];
 							Rows = new List<ReportRow>();
 							Summaries = new ReportSummary[ColumnsCount];
+							Coords = new List<string>();
+							Traces = new Dictionary<string, List<float>>();
 
 							for (int i = 0; i < ColumnsCount; i++)
 							{
@@ -419,6 +425,8 @@ namespace Insql.Models
 
 									Headers[i].Name = field;
 									Headers[i].Hint = hint;
+
+									Traces.Add(field, new List<float>());
 								}
 							}
 
@@ -433,11 +441,15 @@ namespace Insql.Models
 									Date = DateTime.TryParse(text, out _date) ? _date : DateTime.MinValue
 								};
 
+								Coords.Add(row.Date.ToString(DateFormat));
+								
 								Rows.Add(row);
 
 								for (int i = 1; i < ColumnsCount; i++)
 								{
-									if (Headers[i] != null)
+									var header = Headers[i];
+
+									if (header != null)
 									{
 										isFloat = false;
 										val = 0;
@@ -454,17 +466,17 @@ namespace Insql.Models
 										}
 
 										// Проверка уставок
-										if (isFloat && Headers[i].CheckValues != null)
+										if (isFloat && header.CheckValues != null)
 										{
 											isCheckPassed = false;
 
-											for (int x = 0; x < Headers[i].CheckValues.Length; x++)
+											for (int x = 0; x < header.CheckValues.Length; x++)
 											{
-												if (val <= Headers[i].CheckValues[x])
+												if (val <= header.CheckValues[x])
 												{
 													try
 													{
-														check = Headers[i].Checks[x];
+														check = header.Checks[x];
 														isCheckPassed = true;
 														break;
 													}
@@ -474,7 +486,7 @@ namespace Insql.Models
 
 											if (!isCheckPassed)
 											{
-												check = Headers[i].Checks.Last();
+												check = header.Checks.Last();
 											}
 										}
 
@@ -484,14 +496,20 @@ namespace Insql.Models
 											IsFloat = isFloat,
 											Value = isFloat ? val : 0,
 											Check = check,
-											Edit = Headers[i].Edit,
-											IsEmpty = Headers[i].Name == "DateMarker",
+											Edit = header.Edit,
+											IsEmpty = header.Name == "DateMarker",
 										};
 
 										// Сбор данных для агрегирования
 										Summaries[i].Sum += val;
 										if (val < Summaries[i].Min) Summaries[i].Min = val;
 										if (val > Summaries[i].Max) Summaries[i].Max = val;
+
+										// Запись значения в trace для графиков
+										if (Traces.ContainsKey(header.Name))
+										{
+											Traces[header.Name].Add(isFloat ? val : 0);
+										}
 									}
 								}
 							}

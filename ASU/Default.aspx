@@ -36,6 +36,7 @@
 	<script>var host = '<%=ResolveClientUrl("~/")%>'</script>
 	<script src="<%=(ResolveClientUrl("~/content/js/tree-items.js") + "?" + r)%>"></script>
 	<script src="<%=(ResolveClientUrl("~/content/js/index.js") + "?" + r)%>"></script>
+	<script src="<%=(ResolveClientUrl("~/content/lib/plotly/plotly-2.28.0.min.js"))%>"></script>
 </body>
 
 </html>
