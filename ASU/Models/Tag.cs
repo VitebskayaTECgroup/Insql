@@ -78,10 +78,10 @@ namespace Insql.Models
 			}
 
 			var labels = points
-					.OrderBy(x => x.DateTime)
-					.Select(x => x.DateTime.ToString("HH:mm"))
-					.Distinct()
-					.ToList();
+				.OrderBy(x => x.DateTime)
+				.Select(x => x.DateTime.ToString("HH:mm"))
+				.Distinct()
+				.ToList();
 
 			var series = points
 				.GroupBy(x => x.TagName)
