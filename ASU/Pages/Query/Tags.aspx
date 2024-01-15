@@ -14,6 +14,10 @@
 	}
 	else
 	{
+		%>
+		<div style="text-align: center; font-size: .9em;">Найдено тегов: <%=model.Count%></div>
+		<%
+
 		foreach (var tag in model)
 		{
 			%>

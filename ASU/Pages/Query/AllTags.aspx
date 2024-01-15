@@ -3,6 +3,9 @@
 	string server = Request.Form.Get("server");
 	var model = Insql.Models.TagInfo.GetAllTags(server);
 
+	%>
+	<div>Найдено тегов: <%=model.Count%></div>
+	<%
 	foreach (var tag in model)
 	{
 		%>
