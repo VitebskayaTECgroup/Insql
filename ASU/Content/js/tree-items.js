@@ -107,7 +107,8 @@
 					'Суточная ведомость 1ч.': '#/devices/boilers/ka5/acc/acc1.sql',
 					'Суточная ведомость 2ч.': '#/devices/boilers/ka5/acc/acc2.sql',
 					'Контроль металла': '#/devices/boilers/ka5/acc/metal.sql'
-				}
+				},
+				'Уставки': '#/devices/boilers/ka5/omron/checks.sql',
 			},
 			'К/а доп. инфо': '#/devices/boilers/additional.sql'
 		},

@@ -200,6 +200,7 @@
     <Content Include="Content\sql\devices\boilers\ka4\boiler.sql" />
     <Content Include="Content\sql\devices\boilers\ka5\boiler.sql" />
     <Content Include="Content\sql\devices\boilers\additional.sql" />
+    <Content Include="Content\sql\devices\boilers\ka5\omron\checks.sql" />
     <Content Include="Content\sql\devices\deaerator\deaerator-2-to-1.sql" />
     <Content Include="Content\sql\devices\flow-meters.sql" />
     <Content Include="Content\sql\devices\boilers\ka3\acc\acc1.sql" />

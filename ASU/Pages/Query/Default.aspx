@@ -71,7 +71,7 @@
 	<div id="tooltip"></div>
 
 	<script>var host = '<%=ResolveClientUrl("~/")%>'</script>
-	<script src="<%=(ResolveClientUrl("~/content/lib/chartist/chartist.js") + "?" + r)%>"></script>
+	<script src="<%=(ResolveClientUrl("~/content/lib/plotly/plotly-2.28.0.min.js"))%>"></script>
 	<script src="<%=(ResolveClientUrl("~/content/js/query.js") + "?" + r)%>"></script>
 </body>
 </html>

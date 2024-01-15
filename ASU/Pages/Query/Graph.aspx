@@ -6,7 +6,7 @@
 	string start = Request.Form.Get("s");
 	string finish = Request.Form.Get("e");
 
-	var json = Insql.Models.Tag.GraphJson(server, tags, res, start, finish);
+	var json = Insql.Models.Tag.ToGraph(server, tags, res, start, finish);
 
 	Response.Write(json);
 %>
