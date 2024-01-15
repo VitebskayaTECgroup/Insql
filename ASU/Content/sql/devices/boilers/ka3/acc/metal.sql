@@ -22,10 +22,10 @@ SELECT
 	CAST(K3_VG1_P63b as decimal(15, 2)) as "11, °С [K3_VG1_P63b]",
 	CAST(K3_VG1_P64b as decimal(15, 2)) as "12, °С [K3_VG1_P64b]",
 	null,
-	CAST(K3_VG1_P49b as decimal(15, 2)) as "6, °С [K3_VG1_P49b]",
-	CAST(K3_VG1_P50b as decimal(15, 2)) as "12, °С [K3_VG1_P50b]",
-	CAST(K3_VG1_P51b as decimal(15, 2)) as "66, °С [K3_VG1_P51b]",
-	CAST(K3_VG1_P52b as decimal(15, 2)) as "72, °С [K3_VG1_P52b]"
+	CAST(K3_VG1_P49b as decimal(15, 2)) as "№6, °С [K3_VG1_P49b]",
+	CAST(K3_VG1_P50b as decimal(15, 2)) as "№12, °С [K3_VG1_P50b]",
+	CAST(K3_VG1_P51b as decimal(15, 2)) as "№66, °С [K3_VG1_P51b]",
+	CAST(K3_VG1_P52b as decimal(15, 2)) as "№72, °С [K3_VG1_P52b]"
 FROM
 	OpenQuery(INSQL,
 	"SELECT DateTime,

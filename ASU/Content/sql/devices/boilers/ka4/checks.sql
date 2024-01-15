@@ -12,7 +12,7 @@ SELECT
 	CAST(K4AB_FP_SP_PID_On_Dis       as decimal(15, 2)) as "Д4, Па [K4AB_FP_SP_PID_On_Dis]",
 	CAST(K4AB_SP_P_Vent_Handle_PIDOn as decimal(15, 2)) as "В4, кПа [K4AB_SP_P_Vent_Handle_PIDOn]",
 	CAST(K4B_SP_F_Dis_PIDOff         as decimal(15, 2)) as "Д4Б, Гц [K4B_SP_F_Dis_PIDOff]",
-	CAST(K4B_SP_P_Dis_PIDOn          as decimal(15, 2)) as "Д4Б, Гц [K4B_SP_P_Dis_PIDOn]",
+	CAST(K4B_SP_P_Dis_PIDOn          as decimal(15, 2)) as "Д4Б, Па [K4B_SP_P_Dis_PIDOn]",
 	CAST(K4B_SP_F_Vent_Handle_PIDOff as decimal(15, 2)) as "В4Б, Па [K4B_SP_F_Vent_Handle_PIDOff]"
 FROM
 	OpenQuery(INSQL,

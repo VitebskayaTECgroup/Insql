@@ -49,7 +49,7 @@ SELECT
 	Round(S2_214_Zad_W, 2) as "214, уст.",
 	null,
 	Round(S2_215_Zad_Real, 2) as "215, реал.",
-	Round(S2_215_Zad_W, 2) as "216, уст.",
+	Round(S2_215_Zad_W, 2) as "215, уст.",
 	null,
 	Round(S2_216_Zad_Real, 2) as "216, реал.",
 	Round(S2_216_Zad_W, 2) as "216, уст.",
