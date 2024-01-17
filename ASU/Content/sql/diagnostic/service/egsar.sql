@@ -4,7 +4,7 @@
 
 SET QUOTED_IDENTIFIER OFF
 SELECT
-DateTime as "Дата",
+	DateTime as "Дата",
 	null,
 	S2_MV010_n1 as "Частота вращения ротора турбины [S2_MV010_n1][Vertical:]",
 	S2_EGOPER_G_SMCVD_FLT_YRST as "СМ РК ЧВД: Положение, мм: Квитировать [S2_EGOPER_G_SMCVD_FLT_YRST][Vertical:]",
