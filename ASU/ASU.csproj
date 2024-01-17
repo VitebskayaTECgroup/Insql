@@ -243,7 +243,7 @@
     <Content Include="Content\sql\diagnostic\service\devices.insql1.sql" />
     <Content Include="Content\sql\diagnostic\service\devices.insql2.sql" />
     <Content Include="Content\sql\diagnostic\service\doors.sql" />
-    <Content Include="Content\sql\diagnostic\service\esgar.sql" />
+    <Content Include="Content\sql\diagnostic\service\egsar.sql" />
     <Content Include="Content\sql\diagnostic\service\humidity.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
