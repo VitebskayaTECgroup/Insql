@@ -100,8 +100,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\INSQL1-asu.pubxml" />
     <None Include="Properties\PublishProfiles\INSQL1.pubxml" />
+    <None Include="Properties\PublishProfiles\INSQL2-asu.pubxml" />
     <None Include="Properties\PublishProfiles\INSQL2.pubxml" />
+    <None Include="Properties\PublishProfiles\PROJECT-asu.pubxml" />
     <None Include="Properties\PublishProfiles\PROJECT.pubxml" />
   </ItemGroup>
   <ItemGroup>
