@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASU", "ASU\ASU.csproj", "{3B830DFB-3357-45BD-B345-D092432CD0C0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MnemonicaBase", "Mnemonica\MnemonicaBase.csproj", "{ED0CD66A-BCD1-4E8B-91D6-788FCB90AEFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3B830DFB-3357-45BD-B345-D092432CD0C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B830DFB-3357-45BD-B345-D092432CD0C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B830DFB-3357-45BD-B345-D092432CD0C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED0CD66A-BCD1-4E8B-91D6-788FCB90AEFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED0CD66A-BCD1-4E8B-91D6-788FCB90AEFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED0CD66A-BCD1-4E8B-91D6-788FCB90AEFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED0CD66A-BCD1-4E8B-91D6-788FCB90AEFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
