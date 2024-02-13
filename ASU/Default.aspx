@@ -10,7 +10,7 @@
 	<meta http-equiv="Cache-Control" content="no-cache" />
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>АСУ</title>
+	<title>АСУ </title>
 	<link rel="shortcut icon" href="<%=(ResolveClientUrl("~/content/images/favicon.png") + "?" + r)%>" type="image/png" />
 	<link rel="stylesheet" href="<%=(ResolveClientUrl("~/content/widgets/datepicker/datepicker.dark.css") + "?" + r)%>" />
 	<link rel="stylesheet" href="<%=(ResolveClientUrl("~/content/widgets/timepicker/timepicker.dark.css") + "?" + r)%>" />

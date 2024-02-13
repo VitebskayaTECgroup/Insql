@@ -141,7 +141,6 @@ SELECT
 	S2_EGW_VC_ZOCND_YOFF as "Привод ПД ЧНД: КМД 'ОТКЛ'' [S2_EGW_VC_ZOCND_YOFF][Vertical:]",
 	S2_EGW_VC_ZOCND_YON as "Привод ПД ЧНД: КМД 'ВКЛ'' [S2_EGW_VC_ZOCND_YON][Vertical:]",
 	S2_EGW_VC_ZOCND_YRST as "Привод ПД ЧНД: КМД 'Сбросить ошибку'' [S2_EGW_VC_ZOCND_YRST][Vertical:]"
-
 FROM
 	OpenQuery(INSQL,
 	"SELECT DateTime,S2_MV010_n1,S2_EGOPER_G_SMCVD_FLT_YRST,
