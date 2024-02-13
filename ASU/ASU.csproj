@@ -106,6 +106,9 @@
     <None Include="Properties\PublishProfiles\INSQL2.pubxml" />
     <None Include="Properties\PublishProfiles\PROJECT-asu.pubxml" />
     <None Include="Properties\PublishProfiles\PROJECT.pubxml" />
+    <None Include="Properties\PublishProfiles\toINSQL1.pubxml" />
+    <None Include="Properties\PublishProfiles\toINSQL2.pubxml" />
+    <None Include="Properties\PublishProfiles\toProject.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\index.css" />
