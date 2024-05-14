@@ -33,9 +33,10 @@ var linesBuffer = []
 var pickers = {}
 
 var server = cookie('server')
+console.log('current server is ' + server)
 if (!server) {
-	cookie('server', 'insql2', { path: '/', expires: 9999999999 })
-	server = 'insql2'
+	server = location.hostname.indexOf('insql1') > -1 ? 'insql1' : 'insql2'
+	cookie('server', server, { path: '/', expires: 9999999999 })
 }
 var el = document.querySelector('[server="' + server + '"]')
 if (el) el.className = 'active-server'
@@ -121,9 +122,12 @@ function Go() {
 
 			if (link.indexOf('http') > -1) {
 				for (var key in pickers) { try { pickers[key].destroy() } catch (e) {} }
-				view.innerHTML = '<iframe name="' + Math.random() + '" src="' + link.replace(/insql1|insql2|insql/g, server) + '?z=' + Math.random() + '" height="100%" width="100%" frameborder="0"></iframe>'
+				view.innerHTML = '<iframe name="' + Math.random() + '" src="' + link.replace(/insql1|insql2|insql/g, server) +
+					'?server=' + encodeURIComponent(server) +
+					'&z=' + Math.random() +
+				'" height="100%" width="100%" frameborder="0"></iframe>'
 			} else {
-				get(host + 'pages/data/table.aspx', 'file=' + link + '&server=' + server)
+				get(host + 'pages/data/table.aspx', 'file=' + link + '&server=' + encodeURIComponent(server))
 			}
 		}
 	}
@@ -1094,6 +1098,18 @@ function toServer(elem) {
 	elem.className = 'active-server'
 	link = null
 	Go()
+}
+
+function changeServer(serverName) {
+	try {
+		e = event || window.event
+		e.preventDefault()
+	}
+	catch (e) {}
+	document.location = 'http://' + serverName + '.vst.vitebsk.energo.net/asu/' + document.location.hash
+		.replace('project', serverName)
+		.replace('insql1', serverName)
+		.replace('insql2', serverName)
 }
 
 function get(url, params, callback) {

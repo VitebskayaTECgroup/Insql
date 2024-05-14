@@ -21,8 +21,14 @@
 	<div class="about">
 		<a class="title" href="./">АСУ</a>
 		<b id="clock"></b>
-		<a server="insql1" onclick="toServer(this)">INSQL 1</a>
-		<a server="insql2" onclick="toServer(this)">INSQL 2</a>
+		<a server="insql1" onclick="toServer(this)" ondblclick="changeServer('insql1')" oncontextmenu="changeServer('project')" title="Левый клик - сменить источник данных.
+Двойной левый клик - перейти на версию АСУ на выбранном сервере.
+Правый клик - перейти на версию АСУ на общем сервере PROJECT."
+		>INSQL 1</a>
+		<a server="insql2" onclick="toServer(this)" ondblclick="changeServer('insql2')" oncontextmenu="changeServer('project')" title="Левый клик - сменить источник данных.
+Двойной левый клик - перейти на версию АСУ на выбранном сервере.
+Правый клик - перейти на версию АСУ на общем сервере PROJECT."
+		>INSQL 2</a>
 	</div>
 
 	<div class="search">
