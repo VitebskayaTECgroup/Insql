@@ -7,13 +7,13 @@ SET QUOTED_IDENTIFIER OFF
 SELECT
 	DateTime as "Дата",
 	null,
-	CAST(K4_AI1PV * (1 - ROUND(K4_AI1PV / 32767, 0, 1)) as decimal(15, 2)) as "Gг м3 осн [K4_AI1PV]",
-	CAST(K4_AI2PV * (1 - ROUND(K4_AI2PV / 32767, 0, 1)) as decimal(15, 2)) as "Gг м3 мал [K4_AI2PV]",
-	CAST(K4_AI3PV * (1 - ROUND(K4_AI3PV / 327.67, 0, 1)) as decimal(15, 2)) as "Pг кѕа [K4_AI3PV]",
-	CAST(K4_AI4PV * (1 - ROUND(K4_AI4PV / 327.67, 0, 1)) as decimal(15, 2)) as "Gм т [K4_AI4PV]"
+	CAST(K4_Qgas_osn * (1 - ROUND(K4_Qgas_osn / 32767, 0, 1)) as decimal(15, 2)) as "Gг м3 осн [K4_Qgas_osn]",
+	CAST(K4_Qgas_pb * (1 - ROUND(K4_Qgas_pb / 32767, 0, 1)) as decimal(15, 2)) as "Gг м3 мал [K4_Qgas_pb]",
+	CAST(K4_Pgas * (1 - ROUND(K4_Pgas / 327.67, 0, 1)) as decimal(15, 2)) as "Pг кѕа [K4_Pgas]",
+	CAST(K4_Qmaz * (1 - ROUND(K4_Qmaz / 327.67, 0, 1)) as decimal(15, 2)) as "Gм т [K4_Qmaz]"
 FROM
 	OpenQuery(INSQL,
-	"SELECT DateTime, K4_AI1PV, K4_AI2PV, K4_AI3PV, K4_AI4PV
+	"SELECT DateTime, K4_Qgas_osn, K4_Qgas_pb, K4_Pgas, K4_Qmaz
 	FROM Runtime.dbo.AnalogWideHistory
 	WHERE wwVersion = 'Latest'
 	AND wwRetrievalMode = 'Cyclic'
@@ -32,13 +32,13 @@ SET QUOTED_IDENTIFIER OFF
 SELECT
 	DateTime as "Дата",
 	null,
-	CAST(K4_AI1PV * (1 - ROUND(K4_AI1PV / 32767, 0, 1)) as decimal(15, 2)) as "Gг м3 осн [K4_AI1PV]",
-	CAST(K4_AI2PV * (1 - ROUND(K4_AI2PV / 32767, 0, 1)) as decimal(15, 2)) as "Gг м3 мал [K4_AI2PV]",
-	CAST(K4_AI3PV * (1 - ROUND(K4_AI3PV / 327.67, 0, 1)) as decimal(15, 2)) as "Pг кѕа [K4_AI3PV]",
-	CAST(K4_AI4PV * (1 - ROUND(K4_AI4PV / 327.67, 0, 1)) as decimal(15, 2)) as "Gм т [K4_AI4PV]"
+	CAST(K4_Qgas_osn * (1 - ROUND(K4_Qgas_osn / 32767, 0, 1)) as decimal(15, 2)) as "Gг м3 осн [K4_Qgas_osn]",
+	CAST(K4_Qgas_pb * (1 - ROUND(K4_Qgas_pb / 32767, 0, 1)) as decimal(15, 2)) as "Gг м3 мал [K4_Qgas_pb]",
+	CAST(K4_Pgas * (1 - ROUND(K4_Pgas / 327.67, 0, 1)) as decimal(15, 2)) as "Pг кѕа [K4_Pgas]",
+	CAST(K4_Qmaz * (1 - ROUND(K4_Qmaz / 327.67, 0, 1)) as decimal(15, 2)) as "Gм т [K4_Qmaz]"
 FROM
 	OpenQuery(INSQL,
-	"SELECT DateTime, K4_AI1PV, K4_AI2PV, K4_AI3PV, K4_AI4PV
+	"SELECT DateTime, K4_Qgas_osn, K4_Qgas_pb, K4_Pgas, K4_Qmaz
 	FROM Runtime.dbo.AnalogWideHistory
 	WHERE wwVersion = 'Latest'
 	AND wwRetrievalMode = 'Cyclic'
@@ -56,13 +56,13 @@ SET QUOTED_IDENTIFIER OFF
 SELECT
 	DateTime - 1 as "Дата",
 	null,
-	CAST(K4_AI1PV * (1 - ROUND(K4_AI1PV / 32767, 0, 1)) as decimal(15, 2)) as "Gг м3 осн [K4_AI1PV]",
-	CAST(K4_AI2PV * (1 - ROUND(K4_AI2PV / 32767, 0, 1)) as decimal(15, 2)) as "Gг м3 мал [K4_AI2PV]",
-	CAST(K4_AI3PV * (1 - ROUND(K4_AI3PV / 327.67, 0, 1)) as decimal(15, 2)) as "Pг кѕа [K4_AI3PV]",
-	CAST(K4_AI4PV * (1 - ROUND(K4_AI4PV / 327.67, 0, 1)) as decimal(15, 2)) as "Gм т [K4_AI4PV]"
+	CAST(K4_Qgas_osn * (1 - ROUND(K4_Qgas_osn / 32767, 0, 1)) as decimal(15, 2)) as "Gг м3 осн [K4_Qgas_osn]",
+	CAST(K4_Qgas_pb * (1 - ROUND(K4_Qgas_pb / 32767, 0, 1)) as decimal(15, 2)) as "Gг м3 мал [K4_Qgas_pb]",
+	CAST(K4_Pgas * (1 - ROUND(K4_Pgas / 327.67, 0, 1)) as decimal(15, 2)) as "Pг кѕа [K4_Pgas]",
+	CAST(K4_Qmaz * (1 - ROUND(K4_Qmaz / 327.67, 0, 1)) as decimal(15, 2)) as "Gм т [K4_Qmaz]"
 FROM
 	OpenQuery(INSQL,
-	"SELECT DateTime, K4_AI1PV, K4_AI2PV, K4_AI3PV, K4_AI4PV
+	"SELECT DateTime, K4_Qgas_osn, K4_Qgas_pb, K4_Pgas, K4_Qmaz
 	FROM Runtime.dbo.AnalogWideHistory
 	WHERE wwVersion = 'Latest'
 	AND wwRetrievalMode = 'Cyclic'
@@ -84,17 +84,17 @@ SET QUOTED_IDENTIFIER OFF
 SELECT
 	GroupDate as 'Дата',
 	null,
-	CAST(AVG(K4_AI1PV * (1 - ROUND(K4_AI1PV / 32767, 0, 1))) as decimal(15, 2)) as "Gг м3 осн [K4_AI1PV]",
-	CAST(AVG(K4_AI2PV * (1 - ROUND(K4_AI2PV / 32767, 0, 1))) as decimal(15, 2)) as "Gг м3 мал [K4_AI2PV]",
-	CAST(AVG(K4_AI3PV * (1 - ROUND(K4_AI3PV / 327.67, 0, 1))) as decimal(15, 2)) as "Pг кѕа [K4_AI3PV]",
-	CAST(AVG(K4_AI4PV * (1 - ROUND(K4_AI4PV / 327.67, 0, 1))) as decimal(15, 2)) as "Gм т [K4_AI4PV]"
+	CAST(AVG(K4_Qgas_osn * (1 - ROUND(K4_Qgas_osn / 32767, 0, 1))) as decimal(15, 2)) as "Gг м3 осн [K4_Qgas_osn]",
+	CAST(AVG(K4_Qgas_pb * (1 - ROUND(K4_Qgas_pb / 32767, 0, 1))) as decimal(15, 2)) as "Gг м3 мал [K4_Qgas_pb]",
+	CAST(AVG(K4_Pgas * (1 - ROUND(K4_Pgas / 327.67, 0, 1))) as decimal(15, 2)) as "Pг кѕа [K4_Pgas]",
+	CAST(AVG(K4_Qmaz * (1 - ROUND(K4_Qmaz / 327.67, 0, 1))) as decimal(15, 2)) as "Gм т [K4_Qmaz]"
 FROM (
 	SELECT
 		DateAdd(hour, 1, DateAdd(hour, DateDiff(hour, 0, DateAdd(minute, -1, DateTime)), 0)) as GroupDate,
 		*
 	FROM
 		OpenQuery(INSQL,
-		"SELECT DateTime, K4_AI1PV, K4_AI2PV, K4_AI3PV, K4_AI4PV
+		"SELECT DateTime, K4_Qgas_osn, K4_Qgas_pb, K4_Pgas, K4_Qmaz
 		FROM Runtime.dbo.AnalogWideHistory
 		WHERE wwVersion = 'Latest'
 		AND wwRetrievalMode = 'Cyclic'
@@ -124,10 +124,10 @@ SET QUOTED_IDENTIFIER OFF
 SELECT
 	DateTime as "Дата",
 	null,
-	K4_AI1PV as "Gг м3 осн [K4_AI1PV]",
-	K4_AI2PV as "Gг м3 мал [K4_AI2PV]",
-	K4_AI3PV as "Pг кѕа [K4_AI3PV]",
-	K4_AI4PV as "Gм т [K4_AI4PV]"
+	K4_Qgas_osn as "Gг м3 осн [K4_Qgas_osn]",
+	K4_Qgas_pb as "Gг м3 мал [K4_Qgas_pb]",
+	K4_Pgas as "Pг кѕа [K4_Pgas]",
+	K4_Qmaz as "Gм т [K4_Qmaz]"
 FROM
 	KA_Fuel
 WHERE
@@ -150,10 +150,10 @@ SET QUOTED_IDENTIFIER OFF
 SELECT
 	DateAdd(month, DateDiff(month, 0, DateTime), 0) as "Дата",
 	null,
-	CAST(AVG(K4_AI1PV) as decimal(15, 2)) as "Gг м3 осн [K4_AI1PV]",
-	CAST(AVG(K4_AI2PV) as decimal(15, 2)) as "Gг м3 мал [K4_AI2PV]",
-	CAST(AVG(K4_AI3PV) as decimal(15, 2)) as "Pг кѕа [K4_AI3PV]",
-	CAST(AVG(K4_AI4PV) as decimal(15, 2)) as "Gм т [K4_AI4PV]"
+	CAST(AVG(K4_Qgas_osn) as decimal(15, 2)) as "Gг м3 осн [K4_Qgas_osn]",
+	CAST(AVG(K4_Qgas_pb) as decimal(15, 2)) as "Gг м3 мал [K4_Qgas_pb]",
+	CAST(AVG(K4_Pgas) as decimal(15, 2)) as "Pг кѕа [K4_Pgas]",
+	CAST(AVG(K4_Qmaz) as decimal(15, 2)) as "Gм т [K4_Qmaz]"
 FROM
 	KA_Fuel
 WHERE
