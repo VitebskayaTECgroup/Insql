@@ -91,7 +91,10 @@
 			'К/а № 4': {
 				'Расход топлива': '#/devices/boilers/ka4/boiler.sql',
 				'Уставки': '#/devices/boilers/ka4/checks.sql',
-				'Газоанализаторы': '#/devices/boilers/ka4/gas.sql'
+				'Газоанализаторы': '#/devices/boilers/ka4/gas.sql',
+				'Суточные ведомости': {
+					'Контроль металла': '#/devices/boilers/ka4/acc/metal.sql'
+				}
 			},
 			'К/а № 5': {
 				'Расход топлива': '#/devices/boilers/ka5/boiler.sql',
