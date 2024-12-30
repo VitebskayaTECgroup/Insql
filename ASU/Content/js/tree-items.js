@@ -93,6 +93,7 @@
 				'Уставки': '#/devices/boilers/ka4/checks.sql',
 				'Газоанализаторы': '#/devices/boilers/ka4/gas.sql',
 				'Суточные ведомости': {
+					'Суточная ведомость': '#/devices/boilers/ka4/acc/acc1.sql',
 					'Контроль металла': '#/devices/boilers/ka4/acc/metal.sql'
 				}
 			},
