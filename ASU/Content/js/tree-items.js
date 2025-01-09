@@ -25,7 +25,9 @@
 		'KA-4': {
 			'VG1. Экран 1': '#/http://server/mnemonica/ka4_vg1_1/',
 			'VG1. Экран 2': '#/http://server/mnemonica/ka4_vg1_2/',
-			'VG2. Экран 1': '#/http://server/mnemonica/ka4_vg2_1/'
+			'VG1. Мнемосхема': '#/http://server/mnemonica/ka4_vg1_3/',
+			'VG2. Экран 1': '#/http://server/mnemonica/ka4_vg2_1/',
+			'VG2. Мнемосхема': '#/http://server/mnemonica/ka4_vg2_2/'
 		},
 		'KA-5': {
 			'VG1. Экран 1': '#/http://server/mnemonica/ka5_vg1_1/',
