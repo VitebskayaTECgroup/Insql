@@ -99,6 +99,7 @@
 				'Расход топлива': '#/devices/boilers/ka4/boiler.sql',
 				'Уставки': '#/devices/boilers/ka4/checks.sql',
 				'Газоанализаторы': '#/devices/boilers/ka4/gas.sql',
+				'РМТ-19': '#/devices/boilers/ka4/PTM-19.sql',
 				'Суточные ведомости': {
 					'Суточная ведомость': '#/devices/boilers/ka4/acc/acc1.sql',
 					'Контроль металла': '#/devices/boilers/ka4/acc/metal.sql'

@@ -203,6 +203,7 @@
     <Content Include="Content\sql\devices\boilers\ka3\checks.sql" />
     <Content Include="Content\sql\devices\boilers\ka4\acc\acc1.sql" />
     <Content Include="Content\sql\devices\boilers\ka4\acc\metal.sql" />
+    <Content Include="Content\sql\devices\boilers\ka4\PTM-19.sql" />
     <Content Include="Content\sql\devices\boilers\ka4\gas.sql" />
     <Content Include="Content\sql\devices\boilers\ka4\checks.sql" />
     <Content Include="Content\sql\devices\boilers\ka4\boiler.sql" />
