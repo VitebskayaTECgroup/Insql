@@ -201,6 +201,7 @@
     <Content Include="Content\sql\devices\boilers\ka2\boiler.sql" />
     <Content Include="Content\sql\devices\boilers\ka3\boiler.sql" />
     <Content Include="Content\sql\devices\boilers\ka3\checks.sql" />
+    <Content Include="Content\sql\devices\boilers\ka4\acc\acc2.sql" />
     <Content Include="Content\sql\devices\boilers\ka4\acc\acc1.sql" />
     <Content Include="Content\sql\devices\boilers\ka4\acc\metal.sql" />
     <Content Include="Content\sql\devices\boilers\ka4\KC-2E.sql" />

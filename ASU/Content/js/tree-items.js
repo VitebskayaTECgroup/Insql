@@ -101,7 +101,8 @@
 				'РМТ-19': '#/devices/boilers/ka4/PTM-19.sql',
 				'КС-2Е': '#/devices/boilers/ka4/KC-2E.sql',
 				'Суточные ведомости': {
-					'Суточная ведомость': '#/devices/boilers/ka4/acc/acc1.sql',
+					'Суточная ведомость 1ч.': '#/devices/boilers/ka4/acc/acc1.sql',
+					'Суточная ведомость 2ч.': '#/devices/boilers/ka4/acc/acc2.sql',
 					'Контроль металла': '#/devices/boilers/ka4/acc/metal.sql'
 				}
 			},
