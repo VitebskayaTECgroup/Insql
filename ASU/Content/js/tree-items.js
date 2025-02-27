@@ -100,6 +100,7 @@
 				'Уставки': '#/devices/boilers/ka4/checks.sql',
 				'РМТ-19': '#/devices/boilers/ka4/PTM-19.sql',
 				'КС-2Е': '#/devices/boilers/ka4/KC-2E.sql',
+				'Ведомость': '#/devices/boilers/ka4/list.sql',
 				'Суточные ведомости': {
 					'Суточная ведомость 1ч.': '#/devices/boilers/ka4/acc/acc1.sql',
 					'Суточная ведомость 2ч.': '#/devices/boilers/ka4/acc/acc2.sql',

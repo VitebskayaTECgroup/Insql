@@ -205,6 +205,7 @@
     <Content Include="Content\sql\devices\boilers\ka4\acc\acc1.sql" />
     <Content Include="Content\sql\devices\boilers\ka4\acc\metal.sql" />
     <Content Include="Content\sql\devices\boilers\ka4\KC-2E.sql" />
+    <Content Include="Content\sql\devices\boilers\ka4\list.sql" />
     <Content Include="Content\sql\devices\boilers\ka4\PTM-19.sql" />
     <Content Include="Content\sql\devices\boilers\ka4\checks.sql" />
     <Content Include="Content\sql\devices\boilers\ka4\boiler.sql" />
