@@ -28,7 +28,7 @@ SELECT
 				/* + dbo.vst_checkDecimal(K2_AI2PV) */
 				+ dbo.vst_checkDecimal(K3_AI1PV)
 				/* + dbo.vst_checkDecimal(K3_AI2PV) */
-				+ dbo.vst_checkDecimal(K4_AI1PV)
+				+ dbo.vst_checkDecimal(K4_Qgas_osn)
 				/* + dbo.vst_checkDecimal(K4_AI2PV) */
 				+ dbo.vst_checkDecimal(K5_AI1PV)
 				/* + dbo.vst_checkDecimal(K5_AI2PV) */
@@ -38,7 +38,7 @@ SELECT
 	) as decimal(25, 3)) as "Дельта [hint: Разница между показаниями расхода газа и суммой показаний расхода газа по котлам]"
 FROM
 	OpenQuery(INSQL, 
-	"SELECT DateTime, G01_AM11P001, G01_SY00A700, G01_AM12P001, G01_AM11T001, G01_AM12T001, G01_AM31Q001, G01_AM32Q001, K1_AI1PV, K1_AI2PV, K2_AI1PV, K2_AI2PV, K3_AI1PV, K3_AI2PV, K4_AI1PV, K4_AI2PV, K5_AI1PV, K5_AI2PV FROM Runtime.dbo.AnalogWideHistory 
+	"SELECT DateTime, G01_AM11P001, G01_SY00A700, G01_AM12P001, G01_AM11T001, G01_AM12T001, G01_AM31Q001, G01_AM32Q001, K1_AI1PV, K1_AI2PV, K2_AI1PV, K2_AI2PV, K3_AI1PV, K3_AI2PV, K4_Qgas_osn, K4_AI2PV, K5_AI1PV, K5_AI2PV FROM Runtime.dbo.AnalogWideHistory 
 	WHERE wwVersion = 'Latest'
 	AND wwRetrievalMode = 'Cyclic'
 	AND wwResolution = @resolution
