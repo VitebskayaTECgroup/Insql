@@ -93,6 +93,14 @@
 					'Суточная ведомость 1ч.': '#/devices/boilers/ka3/acc/acc1.sql',
 					'Суточная ведомость 2ч.': '#/devices/boilers/ka3/acc/acc2.sql',
 					'Контроль металла': '#/devices/boilers/ka3/acc/metal.sql'
+				},
+				'Отчёты по визографам': {
+					'Отчёт KA-3 VG1. Экран 1': '#/devices/boilers/ka3/vgrep/report-KA3-VG1-1.sql',
+					'Отчёт KA-3 VG1. Экран 2': '#/devices/boilers/ka3/vgrep/report-KA3-VG1-2.sql',
+					'Отчёт KA-3 VG1. Экран 3': '#/devices/boilers/ka3/vgrep/report-KA3-VG1-3.sql',
+					'Отчёт KA-3 VG2. Экран 1': '#/devices/boilers/ka3/vgrep/report-KA3-VG2-1.sql',
+					'Отчёт KA-3 VG2. Экран 2': '#/devices/boilers/ka3/vgrep/report-KA3-VG2-2.sql',
+					'Отчёт KA-3 VG2. Экран 3': '#/devices/boilers/ka3/vgrep/report-KA3-VG2-3.sql'
 				}
 			},
 			'К/а № 4': {
@@ -105,6 +113,11 @@
 					'Суточная ведомость 1ч.': '#/devices/boilers/ka4/acc/acc1.sql',
 					'Суточная ведомость 2ч.': '#/devices/boilers/ka4/acc/acc2.sql',
 					'Контроль металла': '#/devices/boilers/ka4/acc/metal.sql'
+				},
+				'Отчёты по визографам': {
+					'Отчёт KA-4 VG1. Экран 1': '#/devices/boilers/ka4/vgrep/report-KA4-VG1-1.sql',
+					'Отчёт KA-4 VG1. Экран 2': '#/devices/boilers/ka4/vgrep/report-KA4-VG1-2.sql',
+					'Отчёт KA-4 VG2. Экран 1': '#/devices/boilers/ka4/vgrep/report-KA4-VG2-1.sql'
 				}
 			},
 			'К/а № 5': {
@@ -121,6 +134,12 @@
 					'Суточная ведомость 1ч.': '#/devices/boilers/ka5/acc/acc1.sql',
 					'Суточная ведомость 2ч.': '#/devices/boilers/ka5/acc/acc2.sql',
 					'Контроль металла': '#/devices/boilers/ka5/acc/metal.sql'
+				},
+				'Отчёты по визографам': {
+					'Отчёт KA-5 VG1. Экран 1': '#/devices/boilers/ka5/vgrep/report-KA5-VG1-1.sql',
+					'Отчёт KA-5 VG1. Экран 2': '#/devices/boilers/ka5/vgrep/report-KA5-VG1-2.sql',
+					'Отчёт KA-5 VG1. Экран 3': '#/devices/boilers/ka5/vgrep/report-KA5-VG1-3.sql',
+					'Отчёт KA-5 VG1. Экран 4': '#/devices/boilers/ka5/vgrep/report-KA5-VG1-4.sql'
 				},
 				'Уставки': '#/devices/boilers/ka5/omron/checks.sql',
 			},
