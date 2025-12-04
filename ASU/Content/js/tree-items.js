@@ -116,6 +116,7 @@
 			},
 			'К/а № 4': {
 				'Расход топлива': '#/devices/boilers/ka4/boiler.sql',
+				'Уровень воды в барабане': '#/devices/boilers/ka4/water.sql',
 				'Уставки': '#/devices/boilers/ka4/checks.sql',
 				'РМТ-19': '#/devices/boilers/ka4/PTM-19.sql',
 				'КС-2Е': '#/devices/boilers/ka4/KC-2E.sql',

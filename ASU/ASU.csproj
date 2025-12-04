@@ -215,6 +215,7 @@
     <Content Include="Content\sql\devices\boilers\ka4\PTM-19.sql" />
     <Content Include="Content\sql\devices\boilers\ka4\checks.sql" />
     <Content Include="Content\sql\devices\boilers\ka4\boiler.sql" />
+    <Content Include="Content\sql\devices\boilers\ka4\water.sql" />
     <Content Include="Content\sql\devices\boilers\ka4\vgrep\report-KA4-VG2-1.sql" />
     <Content Include="Content\sql\devices\boilers\ka4\vgrep\report-KA4-VG1-2.sql" />
     <Content Include="Content\sql\devices\boilers\ka4\vgrep\report-KA4-VG1-1.sql" />
