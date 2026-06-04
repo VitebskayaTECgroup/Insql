@@ -144,7 +144,8 @@
 				},
 				'Уставки': '#/devices/boilers/ka5/omron/checks.sql',
 			},
-			'К/а доп. инфо': '#/devices/boilers/additional.sql'
+			'К/а доп. инфо': '#/devices/boilers/additional.sql',
+			'Уровни воды в барабанах котлоагрегатов': '#/devices/boilers/boiler_water_level.sql'
 		},
 		'СТКЭР': {
 			'ТА-2': '#/devices/stk-er/ta-2.sql',
