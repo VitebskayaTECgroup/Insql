@@ -199,6 +199,7 @@
 			'ВЗРД': '#/counters/heat/vzrd.sql',
 			'Рубикон': '#/counters/heat/rubikon.sql',
 			'Витебские ковры': '#/counters/heat/kovry.sql',
+			'Мазутное хозяйство': '#/counters/heat/mazutheat.sql',
 			'Баланс пара': '#/counters/heat/heat-balance.sql'
 		},
 		'ГАЗ': {

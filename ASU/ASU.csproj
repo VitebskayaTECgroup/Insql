@@ -157,6 +157,7 @@
     <Content Include="Content\sql\counters\gidrozatvor.sql" />
     <Content Include="Content\sql\counters\heat\dok.sql" />
     <Content Include="Content\sql\counters\heat\heat-balance.sql" />
+    <Content Include="Content\sql\counters\heat\mazutheat.sql" />
     <Content Include="Content\sql\counters\heat\kim.sql" />
     <Content Include="Content\sql\counters\heat\kovry.sql" />
     <Content Include="Content\sql\counters\heat\rubikon.sql" />
