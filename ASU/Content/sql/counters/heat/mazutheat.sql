@@ -7,7 +7,7 @@ SET QUOTED_IDENTIFIER OFF
 SELECT
 	DateTime as "Дата",
 	null,
-	CAST(K4_AI1PV * (1 - ROUND(ABS(K4_AI1PV) / 32768, 0, 1)) as decimal(15, 2)) as "G пар, т/ч [K4_AI1PV]"
+	CAST(K4_AI1PV / 100 * (1 - ROUND(ABS(K4_AI1PV) / 32768, 0, 1)) as decimal(15, 2)) as "G пар, т/ч [K4_AI1PV]"
 FROM
 	OpenQuery(INSQL,
 	"SELECT DateTime, K4_AI1PV
@@ -29,7 +29,7 @@ SET QUOTED_IDENTIFIER OFF
 SELECT
 	DateAdd(mi, -5, DateTime) as "Дата",
 	null,
-	CAST(K4_AI1PV * (1 - ROUND(ABS(K4_AI1PV) / 32768, 0, 1)) as decimal(15, 2)) as "G пар за п/ч, т/ч [K4_AI1PV]"
+	CAST(K4_AI1PV / 100 * (1 - ROUND(ABS(K4_AI1PV) / 32768, 0, 1)) as decimal(15, 2)) as "G пар за п/ч, т/ч [K4_AI1PV]"
 FROM
 	OpenQuery(INSQL,
 	"SELECT DateTime, K4_AI1PV
@@ -51,7 +51,7 @@ SET QUOTED_IDENTIFIER OFF
 SELECT
 	DateAdd(mi, -1445, DateTime) as "Дата",
 	null,
-	CAST(K4_AI1PV * (1 - ROUND(ABS(K4_AI1PV) / 32768, 0, 1)) as decimal(15, 2)) as "G пар за п/с, т/cут [K4_AI1PV]"
+	CAST(K4_AI1PV / 100 * (1 - ROUND(ABS(K4_AI1PV) / 32768, 0, 1)) as decimal(15, 2)) as "G пар за п/с, т/cут [K4_AI1PV]"
 FROM
 	OpenQuery(INSQL,
 	"SELECT DateTime, K4_AI1PV
@@ -75,7 +75,7 @@ SELECT
 	null,
 	CHAR(192+Runtime.dbo.vst_GetShiftNumber(DateTime)) as "Cмена [CLC_ShiftDuty]", 
 	--CHAR(192+CLC_ShiftDuty) as "Cме- на [CLC_ShiftDuty]",
-	CAST(K4_AI1PV * (1 - ROUND(ABS(K4_AI1PV) / 32768, 0, 1)) as decimal(15, 2)) as "G пар за п/ч, т/ч [K4_AI1PV]"
+	CAST(K4_AI1PV / 100 * (1 - ROUND(ABS(K4_AI1PV) / 32768, 0, 1)) as decimal(15, 2)) as "G пар за п/ч, т/ч [K4_AI1PV]"
 FROM
 	OpenQuery(INSQL,
 	"SELECT DateTime, CLC_ShiftDuty, K4_AI1PV
@@ -99,7 +99,7 @@ SELECT
 	DateAdd(mi,480,Convert(DateTime,Round(Convert(float,DateAdd(mi,-500,DateTime))*2,0,1)/2)) as 'Дата',
 	null,
 	CHAR(192+Runtime.dbo.vst_GetShiftNumber(MIN(DateTime))) as "Cмена [CLC_ShiftDuty]",
-	CAST(sum(K4_AI1PV * (1 - ROUND(ABS(K4_AI1PV) / 32768, 0, 1))) as decimal(15, 2)) as "G пар за смену, т/см [K4_AI1PV]"
+	CAST(sum(K4_AI1PV / 100 * (1 - ROUND(ABS(K4_AI1PV) / 32768, 0, 1))) as decimal(15, 2)) as "G пар за смену, т/см [K4_AI1PV]"
 FROM
 	OpenQuery(INSQL,
 	"SELECT DateTime, CLC_ShiftDuty, K4_AI1PV
@@ -130,7 +130,7 @@ SELECT
 	null,
 	CHAR(192+Runtime.dbo.vst_GetShiftNumber(DateTime)) as "Cмена [CLC_ShiftDuty]", 
 	Count(*) as "Час [Время, отработанное сменой за месяц, час]",
-	CAST(sum(K4_AI1PV * (1 - ROUND(ABS(K4_AI1PV) / 32768, 0, 1))) as decimal(15, 2)) as "G пар сум, т/см [K4_AI1PV]"
+	CAST(sum(K4_AI1PV / 100 * (1 - ROUND(ABS(K4_AI1PV) / 32768, 0, 1))) as decimal(15, 2)) as "G пар сум, т/см [K4_AI1PV]"
 FROM
 	OpenQuery(INSQL,
 	"SELECT DateTime, CLC_ShiftDuty, K4_AI1PV
