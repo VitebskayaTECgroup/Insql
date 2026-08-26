@@ -49,7 +49,8 @@
 				Response.Write("<tr><td class=\"vDateTime\">" + row.Date + "</td>");
 				foreach (var cell in row.Cells)
 				{
-					if (cell.IsFloat)
+					//if (cell.IsFloat)
+					if (cell.IsDouble)
 					{
 						Response.Write("<td>" + cell.Value + "</td>");
 					}

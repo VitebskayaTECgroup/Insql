@@ -12,7 +12,8 @@ namespace Insql.Models
 
 		public string[] Checks { get; set; }
 
-		public float[] CheckValues { get; set; }
+		//public float[] CheckValues { get; set; }
+        public double[] CheckValues { get; set; }
 
 		public bool IsEmpty { get; set; }
 

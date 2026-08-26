@@ -1138,7 +1138,8 @@ function get(url, params, callback) {
 			for (var key in pickers) { try { pickers[key].destroy() } catch (e) {} }
 
 			try {
-				var tip = document.getElementById('floatTip')
+				//var tip = document.getElementById('floatTip')
+				var tip = document.getElementById('doubleTip')
 				if (tip) tip.parentNode.removeChild(tip)
 			} catch (e) {}
 
@@ -1255,9 +1256,12 @@ function cookie(name, value, options) {
 document.onmousemove = moveTip;
 
 function moveTip(e) {
-	var floatTip = document.getElementById("floatTip")
-	if (!floatTip) return false
-	document.body.appendChild(floatTip)
+	//var floatTip = document.getElementById("floatTip")
+	//if (!floatTip) return false
+	//document.body.appendChild(floatTip)
+	var doubleTip = document.getElementById("doubleTip")
+	if (!doubleTip) return false
+	document.body.appendChild(doubleTip)
 
 	var x = 0
 	var y = 0
@@ -1270,19 +1274,19 @@ function moveTip(e) {
 		y = e.pageY
 	}
 
-	try { floatTip.style.left = x + 10 + 'px' } catch (e) {}
-	try { floatTip.style.top =  y  + 10 + 'px' } catch (e) {}
+	try { doubleTip.style.left = x + 10 + 'px' } catch (e) {}
+	try { doubleTip.style.top =  y  + 10 + 'px' } catch (e) {}
 }
 
 function toolTip(msg) {
-	var floatTip = document.getElementById("floatTip")
-	if (!floatTip) return false
+	var doubleTip = document.getElementById("doubleTip")
+	if (!doubleTip) return false
 
 	if (msg) {
-		floatTip.innerHTML = msg
-		floatTip.style.display = "block"
+		doubleTip.innerHTML = msg
+		doubleTip.style.display = "block"
 	} else {
-		floatTip.style.display = "none"
+		doubleTip.style.display = "none"
 	}
 }
 

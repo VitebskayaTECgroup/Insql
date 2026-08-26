@@ -4,13 +4,15 @@
 	{
 		public bool IsEmpty { get; set; }
 
-		public bool IsFloat { get; set; }
+        //public bool IsFloat { get; set; }
+        public bool IsDouble { get; set; }
 
 		public bool IsBoolean { get; set; }
 
 		public string Text { get; set; }
 
-		public float Value { get; set; }
+		//public float Value { get; set; }
+        public double Value { get; set; }
 
 		public bool Bool { get; set; }
 

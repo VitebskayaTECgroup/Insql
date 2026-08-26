@@ -161,7 +161,8 @@
 						{
 							string cellEdit = (Model.IsEditEnabled && !string.IsNullOrEmpty(cell.Edit)) ? "edit=\"" + cell.Edit + "\"" : "";
 
-							if (cell.IsFloat)
+							//if (cell.IsFloat)
+							if (cell.IsDouble)
 							{
 								Response.Write("<td nowrap " + cellEdit + " class=\"" + cell.Check + "\">" + cell.Value + "</td>");
 							}
@@ -265,7 +266,8 @@
 		</tfoot>
 	</table>
 
-	<div id="floatTip"></div>
+	<%--<div id="floatTip"></div>--%>
+	<div id="doubleTip"></div>
 	<div id="info">
 		<table>
 			<tr>

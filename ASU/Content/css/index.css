@@ -362,7 +362,8 @@ button[disabled] {
 	z-index: 5;
 }
 
-#floatTip {
+/*#floatTip {*/
+#doubleTip {
 	position: fixed;
 	width: 250px;
 	display: none;

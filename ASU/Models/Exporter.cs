@@ -249,7 +249,8 @@ namespace Insql.Models
 					{
 						line.CreateCell(i + 1).SetCellValue(row.Cells[i].Bool);
 					}
-					else if (row.Cells[i].IsFloat)
+					//else if (row.Cells[i].IsFloat)
+                    else if (row.Cells[i].IsDouble)
 					{
 						line.CreateCell(i + 1).SetCellValue(row.Cells[i].Value);
 					}

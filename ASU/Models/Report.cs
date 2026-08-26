@@ -53,7 +53,8 @@ namespace Insql.Models
 
 		public ReportSummary[] Summaries { get; set; }
 
-		public Dictionary<string, List<float>> Traces { get; set; }
+        //public Dictionary<string, List<float>> Traces { get; set; }
+        public Dictionary<string, List<double>> Traces { get; set; }
 
 		public List<string> Coords { get; set; }
 
@@ -64,8 +65,10 @@ namespace Insql.Models
 			string fileRaw = "", mode = null, database = null, maskStart = null, maskDelta = null, maskStep = null,
 				serverName = null, text = null, hint = null, field = null, tagName = null, check = "";
 			string[] headerParams = null;
-			float val = 0;
-			bool /*isGrouping = false, */isFloat = false, descToText = false, isCheckPassed = false;
+			//float val = 0;
+            double val = 0;
+            //bool /*isGrouping = false, */isFloat = false, descToText = false, isCheckPassed = false;
+            bool /*isGrouping = false, */isDouble = false, descToText = false, isCheckPassed = false;
 			DateTime _date;
 
 			// Читаем файл и тип запроса
@@ -299,7 +302,8 @@ namespace Insql.Models
 							Rows = new List<ReportRow>();
 							Summaries = new ReportSummary[ColumnsCount];
 							Coords = new List<string>();
-							Traces = new Dictionary<string, List<float>>();
+							//Traces = new Dictionary<string, List<float>>();
+                            Traces = new Dictionary<string, List<double>>();
 
 							for (int i = 0; i < ColumnsCount; i++)
 							{
@@ -321,8 +325,10 @@ namespace Insql.Models
 									Summaries[i] = new ReportSummary
 									{
 										Sum = 0,
-										Max = float.MinValue,
-										Min = float.MaxValue,
+										//Max = float.MinValue,
+                                        Max = double.MinValue,
+                                        //Min = float.MaxValue,
+                                        Min = double.MaxValue,
 									};
 
 									if (field.Contains("["))
@@ -351,7 +357,8 @@ namespace Insql.Models
 											{
 												Headers[i].CheckValues = value
 													.Split(',')
-													.Select(x => float.TryParse(x, out float f) ? f : 0)
+													//.Select(x => float.TryParse(x, out float f) ? f : 0)
+                                                    .Select(x => double.TryParse(x, out double f) ? f : 0)
 													.ToArray();
 											}
 
@@ -426,7 +433,8 @@ namespace Insql.Models
 									Headers[i].Name = field;
 									Headers[i].Hint = hint;
 
-									Traces.Add(field, new List<float>());
+									//Traces.Add(field, new List<float>());
+                                    Traces.Add(field, new List<double>());
 								}
 							}
 
@@ -451,7 +459,8 @@ namespace Insql.Models
 
 									if (header != null)
 									{
-										isFloat = false;
+										//isFloat = false;
+                                        isDouble = false;
 										val = 0;
 										check = "";
 
@@ -462,11 +471,13 @@ namespace Insql.Models
 										else
 										{
 											text = reader[i].ToString();
-											isFloat = float.TryParse(text, out val);
+											//isFloat = float.TryParse(text, out val);
+                                            isDouble = double.TryParse(text, out val);
 										}
 
 										// Проверка уставок
-										if (isFloat && header.CheckValues != null)
+										//if (isFloat && header.CheckValues != null)
+                                        if (isDouble && header.CheckValues != null)
 										{
 											isCheckPassed = false;
 
@@ -493,8 +504,10 @@ namespace Insql.Models
 										row.Cells[i - 1] = new ReportCell
 										{
 											Text = text,
-											IsFloat = isFloat,
-											Value = isFloat ? val : 0,
+											//IsFloat = isFloat,
+                                            IsDouble = isDouble,
+                                            //Value = isFloat ? val : 0,
+                                            Value = isDouble ? val : 0,
 											Check = check,
 											Edit = header.Edit,
 											IsEmpty = header.Name == "DateMarker",
@@ -508,7 +521,8 @@ namespace Insql.Models
 										// Запись значения в trace для графиков
 										if (Traces.ContainsKey(header.Name))
 										{
-											Traces[header.Name].Add(isFloat ? val : 0);
+											//Traces[header.Name].Add(isFloat ? val : 0);
+                                            Traces[header.Name].Add(isDouble ? val : 0);
 										}
 									}
 								}
@@ -598,20 +612,23 @@ namespace Insql.Models
 								if (reader[i] == DBNull.Value)
 								{
 									cell.IsBoolean = false;
-									cell.IsFloat = false;
+									//cell.IsFloat = false;
+                                    cell.IsDouble = false;
 									cell.Text = null;
 								}
 								else if (reader.GetFieldType(i) == typeof(bool))
 								{
 									cell.IsBoolean = true;
-									cell.IsFloat = false;
+									//cell.IsFloat = false;
+                                    cell.IsDouble = false;
 									cell.Bool = reader.GetBoolean(i);
 								}
 								else
 								{
 									cell.Text = reader[i].ToString();
 									cell.IsBoolean = false;
-									cell.IsFloat = float.TryParse(cell.Text, out float val);
+									//cell.IsFloat = float.TryParse(cell.Text, out float val);
+                                    cell.IsDouble = double.TryParse(cell.Text, out double val);
 									cell.Value = val;
 								}
 
