@@ -11,6 +11,7 @@ SELECT
 	CAST(isnull(G01_AM31Q701_H1_korr,0)/1000 as decimal(25,3)) as "Q по потр. за п/ч, тыс. м3/ч [G01_AM31Q701_H1]",
 	CAST(isnull(G01_AM11P001_H1,0) as decimal(25,3)) as "P ОЛ за п/ч, абс.МПа [G01_AM11P001_H1]",
 	CAST(isnull(G01_AM11T001_H1,0) as decimal(25,2)) as "T ОЛ за п/ч, °С [G01_AM11T001_H1]",
+	CAST(isnull(G01_AM12Q001_H1,0) as decimal(25,3)) as "Q по потр. за п/ч,  тыс. м3/ч (л.м.р.) [G01_AM12Q001_H1]",
 	CAST(isnull(G01_AM12P001_H1,0) as decimal(25,3)) as "P ЛМР за п/ч, абс.МПа [G01_AM12P001_H1]",
 	CAST(isnull(G01_AM12T001_H1,0) as decimal(25,2)) as "T ЛМР за п/ч, °С [G01_AM12T001_H1]"
 FROM (
@@ -18,7 +19,7 @@ FROM (
 		CASE WHEN DateTime >= '20211008 15:49:00' AND DateTime <= '20211026 10:00:00' THEN G01_AM31Q701_H1 / 1000 ELSE G01_AM31Q701_H1 END AS G01_AM31Q701_H1_korr
 	FROM
 		OpenQuery(INSQL,
-		"SELECT DateTime, G01_AM11P001_H1, G01_AM12P001_H1, G01_AM11T001_H1, G01_AM12T001_H1, G01_AM31Q701_H1
+		"SELECT DateTime, G01_AM11P001_H1, G01_AM12P001_H1, G01_AM12Q001_H1, G01_AM11T001_H1, G01_AM12T001_H1, G01_AM31Q701_H1
 		FROM Runtime.dbo.AnalogWideHistory 
 		WHERE wwVersion = 'Latest'
 		AND wwRetrievalMode = 'Cyclic'
@@ -32,7 +33,7 @@ FROM (
 /*ReportName="ГАЗ по ГРП" (срезы на конец суток)*/
 /*Mode=суточные-1*/
 /*DownQuery="часовые срезы"*/
-/*UpQuery="посменный 9_24"*/
+/*UpQuery="срез за месяц"*/
 
 SET QUOTED_IDENTIFIER OFF
 SELECT
@@ -58,6 +59,54 @@ FROM (
 		AND DateTime >= @start
 		AND DateTime <= @finish")
 ) AS T1
+
+{срез за месяц}
+/*ReportName="ГАЗ по ГРП" (срез за месяц со счетчика)*/
+/*Mode=минутные*/
+/*DownQuery="суточные срезы"*/
+/*UpQuery="расход с начала счета"*/
+
+SET QUOTED_IDENTIFIER OFF
+SELECT 
+	DateAdd(d, -1, DateTime) as "Дата",
+	null, 
+	CAST(isnull(G01_AM11Q001_M1,0) as decimal(25,3)) as "(Cast) Расход газа за месяц (основная линия) [G01_AM11Q001_M1]",
+	CAST(isnull(G01_AM12Q001_M1,0) as decimal(25,3)) as "Расход газа за месяц (линия малых расходов) [G01_AM12Q001_M1]"
+FROM (
+	SELECT *
+	FROM
+		OpenQuery(INSQL, 
+		"SELECT DateTime, G01_AM11Q001_M1, G01_AM12Q001_M1
+		FROM Runtime.dbo.AnalogWideHistory
+		WHERE wwVersion = 'Latest'
+		AND wwRetrievalMode = 'Cyclic'
+		AND wwResolution = @resolution
+		AND DateTime >= @start
+		AND DateTime <= @finish")
+) AS T1
+
+
+{расход с начала счета}
+/*ReportName="ГАЗ по ГРП" (Расход газа с начала счета)*/
+/*Mode=минутные*/
+/*DownQuery="срез за месяц"*/
+/*UpQuery="часовые срезы 9_24"*/
+
+SET QUOTED_IDENTIFIER OFF
+SELECT
+	DateTime as "Дата",
+	null,
+	CAST(isnull(G01_AM11S001,0) as numeric(25,3)) as "Основная линия [G01_AM11S001]",
+	CAST(isnull(G01_AM12S001,0) as numeric(25,3)) as "Линия малых расходов [G01_AM12S001]"
+
+FROM
+	OpenQuery(INSQL, 
+	"SELECT DateTime, G01_AM11S001, G01_AM12S001 FROM Runtime.dbo.AnalogWideHistory 
+	WHERE wwVersion = 'Latest'
+	AND wwRetrievalMode = 'Cyclic'
+	AND wwResolution = @resolution
+	AND DateTime >= @start
+	AND DateTime <= @finish")
 
 
 {часовые срезы 9_24}
